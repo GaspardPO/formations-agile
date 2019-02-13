@@ -1,0 +1,1 @@
+Formation about Software-Crafting "practices" using Code-retreat-like as a support.
