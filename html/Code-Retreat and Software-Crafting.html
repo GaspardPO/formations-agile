@@ -1,0 +1,1822 @@
+    <!doctype html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Code-Retreat et Software Crafting</title>
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Gaspard POINTEAU">
+
+        <link rel="stylesheet" href="../css/reveal.css">
+        <link rel="stylesheet" href="../css/theme/white.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+        </script>
+    </head>
+    <body>
+    <div class="reveal">
+        <div class="slides">
+
+
+            <section>
+                <h1>Code-Retreat<br>
+                    and<br>
+                    Software-Crafting</h1>
+                <p>
+                    <small>Gaspard POINTEAU<br><a href="http://twitter.com/Gaspard_PO">@Gaspard_PO</a></small>
+                </p>
+            </section>
+
+            <section>
+                <section>
+                    <h3>Vous êtes qui ?</h3>
+                    <h3>Vous voulez quoi ?</h3>
+                    <h3>Et sinon, ça va ?</h3>
+                    <aside class="notes">
+                        <p>Attentes ?</p>
+                        <p>Humeur ?</p>
+                        <h4>Besoin ? Problèmes ?</h4>
+                        <h4>Agile ? Scrum ? XP ?</h4>
+                        <h4>Pratiques ? Tests ?</h4>
+                        <h4>Technos ?</h4>
+
+                        Toulouse Software Craftsmanship :<br>
+                        Dev Java, Kotlin, anglais, français<br>
+                        Ruby ?<br>
+                        methodes, pratiques, humains<br>
+                    </aside>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <blockquote>
+                        Solutions to most of tech problems:<br>
+                        - slow down<br>
+                        - sit down and talk to people<br>
+                        - try things<br>
+                        - rest, go home
+                    </blockquote>
+                </section>
+                <section>
+                    <h4>Fonctionnement Pratique</h4>
+
+                    <ul>
+                        <li>10h - 18h</li>
+                        <li>Pauses !</li>
+                        <li>Basé sur du code retreat et de la pratique</li>
+                        <li>Binomes ou Mob</li>
+                        <li>Pas obligé de finir</li>
+                        <li>A la carte. On est agile, on s'adapte au besoin</li>
+                    </ul>
+                    <aside class="notes">
+                        needs some rest 15 days = 2 weeks ? 3 ? <br>
+                        j'y connais rien à l'informatique, c'est vous qui allez faire la formation.<br>
+                        Plein d'exos possibles, on ne va pas tout faire. <br>
+                        Pas obligé de finir chaque exo.
+                    </aside>
+                </section>
+                <section>
+                    <h4>Programme</h4>
+
+                    <ul>
+                        <li>Agilité</li>
+                        <li>Specs</li>
+                        <li>Tests, TDD</li>
+                        <li>Qualité, Clean-Code</li>
+                        <li>Pair/mob, review</li>
+                        <li>Legacy, Refactoring</li>
+                    </ul>
+                </section>
+            </section>
+
+
+            <section>
+                <section>
+                    <h2>Agile</h2>
+                    <img src="images/agile_manifesto.png" alt="Agile Manifesto">
+                    <p>2001, <a href="http://agilemanifesto.org/">http://agilemanifesto.org</a></p>
+
+                    <aside class="notes">
+                        lean, xp, kanban, scrum ...
+                        <p>
+                            Customer satisfaction by early and continuous delivery of valuable software
+                            <br>Welcome changing requirements, even in late development
+                            <br>Working software is delivered frequently (weeks rather than months)
+                            <br>Close, daily cooperation between business people and developers
+                            <br>Projects are built around motivated individuals, who should be trusted
+                            <br>Face-to-face conversation is the best form of communication (co-location)
+                            <br>Working software is the primary measure of progress
+                            <br>Sustainable development, able to maintain a constant pace
+                            <br>Continuous attention to technical excellence and good design
+                            <br>Simplicity—the art of maximizing the amount of work not done—is essential
+                            <br>Best architectures, requirements, and designs emerge from self-organizing teams
+                            <br>Regularly, the team reflects on how to become more effective, and adjusts accordingly
+                        </p>
+                    </aside>
+                </section>
+                <!-- section> TODO   : ajouter Scrum en 2 slides ?
+                    Transparence / Inspection / Adaptation
+                    Sprint
+                    planing / daily scrum / review / retro
+
+                    Time-box
+                    Definition of Done
+
+                3 roles : PO / Scrum Master / équipe
+
+                -->
+                <section>
+                    <h2>eXtreme Programming</h2>
+                    <img src="images/xp_explained.jpg" alt="XP explained" height="500">
+                </section>
+                <section>
+                    <h2>XP values</h2>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Simplicity</li>
+                        <li>Feedback</li>
+                        <li>Courage</li>
+                        <li>Respect</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>XP Practices</h2>
+                    <div style="position:relative; width:640px; height:500px; margin:0 auto;">
+                        <img class="fragment current-visible" height="480" src="images/XP_loop.svg"/>
+                        <img class="fragment current-visible" height="500" src="images/XP_practices.png"
+                             style="position:absolute;top:0;left:0;"/>
+                    </div>
+                </section>
+                <section>
+                    <h2>Software-Craftsmanship</h2>
+                    <img src="images/software_craftsmanship_manifesto.png" alt="Software Craftsmanship Manifesto"
+                         height="450">
+                    <br>
+                    <p>2009, <a href="http://manifesto.softwarecraftsmanship.org/">http://manifesto.softwarecraftsmanship.org</a>
+                    </p>
+                    <aside class="notes">
+                        agile without technic: deliver crap really fast!
+                    </aside>
+                </section>
+                <section>
+                    <h2>Naming</h2>
+                    <p>Is Craftsmanship inclusive? and Crafting? and Craft?</p>
+                    <p>Craftsman, craftswoman, craftsperson, crafter</p>
+                    <br>
+                    <aside class="notes">
+                        our job is to give name to things
+                    </aside>
+                </section>
+
+                <!-- section> TODO
+                    <h2>Artisanal Retro-futirism Crossed with Anarcho-syndicalism</h2>
+                    <p>Is Craftsmanship inclusive? and Crafting? and Craft?</p>
+                    <p>Craftsman, craftswoman, craftsperson, crafter</p>
+                    <br>
+                    <aside class="notes">
+                        our job is to give name to things
+                    </aside>
+                </section -->
+            </section>
+
+
+            <section>
+                <h2>Software-Crafting</h2>
+                <section>
+                    <h3>Practices</h3>
+                    <span class="fragment" data-fragment-index="1">Tests,</span>
+                    <span class="fragment" data-fragment-index="2">TDD,</span>
+                    <span class="fragment" data-fragment-index="3">Clean-Code,</span>
+                    <span class="fragment" data-fragment-index="4">Naming,</span>
+                    <span class="fragment" data-fragment-index="5">Comments,</span>
+                    <span class="fragment" data-fragment-index="6">Communication,</span>
+                    <span class="fragment" data-fragment-index="7">Code-review,</span>
+                    <span class="fragment" data-fragment-index="8">Pair-programing,</span>
+                    <span class="fragment" data-fragment-index="9">Mob-programing,</span>
+                    <span class="fragment" data-fragment-index="10">Simple-Design,</span>
+                    <span class="fragment" data-fragment-index="11">SOLID,</span>
+                    <span class="fragment" data-fragment-index="12">Iteration,</span>
+                    <span class="fragment" data-fragment-index="13">Baby-steps,</span>
+                    <span class="fragment" data-fragment-index="14">Refactoring,</span>
+                    <span class="fragment" data-fragment-index="14">Mentoring,</span>
+                    <span class="fragment" data-fragment-index="15">Collective ownership,</span>
+                    <span class="fragment" data-fragment-index="16">Self-organization,</span>
+                    <span class="fragment" data-fragment-index="17">Continuous Integration,</span>
+                    <span class="fragment" data-fragment-index="18">Continuous Delivery</span>
+                    <p class="fragment">...</p>
+                    <p class="fragment"></p>
+
+                    <aside class="notes">
+                        same as xp practices <br>
+                        + community <br>
+                        + mentoring <br>
+                        + OpenSpaces Socrates <br>
+                        + training (kata, dojo, retreat ...)
+                    </aside>
+                </section>
+                <section>
+                    <h3>Community</h3>
+                    <img src="images/communities.png" alt="european communities" height="380">
+                    <a href="https://softwarecrafters.org/">https://softwarecrafters.org</a>
+                    <aside class="notes">
+                        <p><a href="http://slack.softwarecrafters.org/">http://slack.softwarecrafters.org</a></p>
+                        Toulouse Software Craftsmanship :<br>
+                        Code and coffee <br>
+                        kata, dojo, retreat ... <br>
+                    </aside>
+                </section>
+                <section>
+                    <h3>Conferences</h3>
+                    <img src="images/socrates_logo.png" alt="SoCraTes Logo" height="270">
+                    <img class="fragment" src="images/os-4-principles.png" alt="Open Space 4 Principles" height="270">
+                    <img class="fragment" src="images/Law-of-Two-Feet.png" alt="Law of 2 feet" height="270">
+                    <p>SoCraTes DE, UK, Italy, Canaries, France, BE, Switzerland, US ... <br>
+                        CodeFreeze, I T.A.K.E. Unconference</p>
+                    <aside class="notes">
+                        <p>
+                            SoCraTes Chile, DE, Canaries, Italy, Uk, France, USA, BE, Switzerland <br>
+                            JS CraftCamp (Munich, Germany)<br>
+                            CodeFreeze <br>
+
+                            days : <br>
+                            SoCraTes Day Switzerland <br>
+                            SoCraTes Days Linz <br>
+
+                            half-conf <br>
+                            I T.A.K.E. Unconference<br>
+                        </p>
+                        <p>
+                            Open-Space : 4 principles <br>
+                            law of 2 feets <br>
+                            bee vs butterfly <br>
+                        </p>
+                    </aside>
+                </section>
+                <section>
+                    <h3>Continuous-learning</h3>
+                    <p>
+                        mentoring <br>
+                        kata<br>
+                        dojo<br>
+                        coderetreat ...<br>
+                    </p>
+                    <aside class="notes">
+                        <p>
+                            mentoring <br>
+                            kata<br>
+                            dojo<br>
+                            coderetreat ...<br>
+                        </p>
+                    </aside>
+                </section>
+            </section>
+
+
+            <section>
+                <h2>Specs</h2>
+                <section>
+                    <img src="images/features_used.jpg" alt="features used" width="700">
+
+
+                    <aside class="notes">
+
+                    </aside>
+                </section>
+                <section>
+                    <h2>Imprécises</h2>
+                    <p>Rédigez un cahier des charges pour <span class="fragment">écrire des nombres en lettres</span></p>
+
+                    <br>
+                    <p><span class="fragment">pluriel de "vint" et "cent".</span></p>
+                    <p><span class="fragment">"et-un" ou "-un" ?</span></p>
+                    <p><span class="fragment">Facile != Simple</span></p>
+
+                </section>
+                <section>
+                    <br>
+                    <p>Et la Belgique ? et la Suisse ?<br>
+                        <span class="fragment current-visible"> Le besoin peut évoluer.</span><br>
+                        <span class="fragment"> Le besoin va évoluer.</span>
+                    </p>
+
+                    <blockquote class="fragment">
+                        "Si votre besoin n'évolue plus, c'est que vos utilisateurs sont morts."
+                    </blockquote>
+
+                    <aside class="notes">
+                        Scrum, backlog
+                    </aside>
+                </section>
+                <section>
+                    <h3>Itérations</h3>
+                    <ul>
+                        <li>peu de risques</li>
+                        <li>possibilités de changer</li>
+                        <li>adaptation en fonction des retours d'utilisations</li>
+                        <li>obligé de découper en tout petits incréments</li>
+                        <li>plus le temps passé à écrire les specs est court, plus on accepte de les changer</li>
+                    </ul>
+
+                    <aside class="notes">
+                    </aside>
+                </section>
+                <section>
+                    <h3>User Story</h3>
+                    <img src="images/userStory.jpg" alt="User story"
+                         height="450">
+
+                    <aside class="notes">
+                        user => define user ! -> personas<br>
+                        discussions !
+                    </aside>
+                </section>
+                <section>
+                    <h4>SMART :</h4>
+                    <ul>
+                        <li>Specific</li>
+                        <li>Mesurable</li>
+                        <li>Achievable</li>
+                        <li>Relevant</li>
+                        <li>Time Bound</li>
+                    </ul>
+                    <aside>
+                        Pas la peine d'essayer de réaliser si ce n'est pas possible.
+                    </aside>
+                </section>
+                <section>
+                    <h4>6 D</h4>
+                    <ul>
+                        <li>Désirable</li>
+                        <li>Démontrable</li>
+                        <li>Découpée</li>
+                        <li>Dérisquée</li>
+                        <li>Définition de Fini</li>
+                        <li>Discutée (ou Débattue)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Cycle en V</h4>
+                    <img src="images/req-prod-test.png" alt="cycle en V" height="450">
+                </section>
+                <section>
+                    <h4>Problèmes :</h4>
+                    <blockquote class="fragment">
+                        Ce qui est implementé n'est que ce que les devs ont compris<br>
+                        On fini par livrer un logiciel qui "marche" mais qui n'est pas utilisable.
+                    </blockquote>
+
+                    <blockquote class="fragment">
+                        Soit specs et tests sont redondant (donc inutiles)<br>
+                        Soit specs et tests sont incohérents (donc il faut recommencer)
+                    </blockquote>
+
+                    <blockquote class="fragment">
+                        Les "données" utilisées ne correspondent pas du tout à des cas d'utilisations<br>
+                        (type de données, volume, contenu, temps ...)
+                    </blockquote>
+                </section>
+
+                <section>
+                    <p>Le PO dit "là, par exemple, si je veux faire ... ça ne marche pas" avec un cas réel
+                        d'utilisations</p>
+
+                    <p>autant utiliser les exemples dès le début !</p>
+                </section>
+
+                <section>
+                    <blockquote>
+                        <b>Calculatrice</b>
+                        Lorsque je saisis 30, j’appuie sur le bouton +, je saisis 45, j’appuie sur le bouton égal, alors
+                        j’obtiens 75.
+                    </blockquote>
+                    <blockquote>
+                        <b>Orthodromie</b>
+                        La distance orthodromique entre Paris (48°51’N – 2°21’E) et Montpellier (43°36’N – 3°53’E) est de
+                        595 kms.
+                    </blockquote>
+                    <blockquote>
+                        <b>Calcul d’agios</b>
+                        Sur le 4e trimestre 2012, un compte est débiteur de 451€ du 13/11 au 28/11 et de 342 € du 08/12 au
+                        27/12, avec un taux d’intérêt de 20% annuel. Les intérêts sur la période sont de 7,27 €
+                    </blockquote>
+                </section>
+                <section>
+                    <p>Et si on utilisait ces exemples d'utilisations comme critères acceptances ?<br>
+                        ATDD : Acceptance Test Driven Development
+                    </p>
+
+                    <p class="fragment">Et si on les automatisait ?<br>
+                        Tests fonctionnels de non-regression
+                    </p>
+
+                    <p class="fragment">Bonus:<br>
+                        Si on a un cas bien décrit pour être automatisable, on a un exemple pour la démo et la doc
+                        d'utilisation
+                    </p>
+                </section>
+                <section>
+                    <h3>Super - Bonus </h3>
+                    <p class="fragment">Les Devs et le business parlent le même langage</p>
+                </section>
+            </section>
+
+            <section>
+                <h2>Test</h2>
+                <section>
+                    <blockquote>
+                        L'application sera toujours testée. <br>
+                        Si ce n'est pas pendant le développement, ça sera pendant l'utilisation, par des clients mécontents.
+                    </blockquote>
+                </section>
+                <section>
+                    <img src="images/test_pyramid.png" alt="pyramide" height="450">
+                </section>
+                <section>
+                    <p>
+                        Et si en plus d'avoir les tests "fonctionnels" à remplir, on poussait à l'extreme :<br>
+                        pour chaque tache de la user story ?<br>
+                        pour chaque méthode ?<br>
+                        d'abord écrire le besoin, puis le réaliser.
+                    </p>
+                </section>
+                <section>
+                    <h3>Test Unitaires</h3>
+                    <p>FIRST</p>
+
+                    <ul>
+                        <li>F - Fast</li>
+                        <li>I - Independant</li>
+                        <li>R - Reproductible</li>
+                        <li>S - Self-Valid</li>
+                        <li>T - Timely</li>
+                    </ul>
+                    <aside class="notes">
+                        Self-valid = auto-suffisant<br>
+                        Timely = au bon moment = juste avant !
+                    </aside>
+                </section>
+            </section>
+            <section>
+                <img src="images/test_Csharp.png" alt="unit test C sharp" height="300">
+                <img src="images/unit_test_ruby.png" alt="unit test ruby" height="300">
+                <aside class="notes">
+                    /!\ dans certains langages il faut "Test" plutot que "Should"
+                </aside>
+            </section>
+
+            <section>
+                <h2>TDD</h2>
+                <section>
+                    <h4 class="fragment current-visible">Test driven development ?</h4>
+                    <h4 class="fragment">Test driven design ?</h4>
+                    <p class="fragment">l'objectif n'est pas les tests, c'est le design !<br>
+                        le batterie de tests n'est qu'un effet de bord en cadeau</p>
+                </section>
+                <section>
+                    <h3>Focus sur le besoin !</h3>
+                    <p>oblige à réfléchir à ce que je veux en sortie<br>
+                        ce dont j'ai besoin en entrée<br>
+                        avant de faire la prod</p>
+                </section>
+                <section>
+                    <img src="images/tdd_flow.gif" alt="red green refactor" height="550">
+                </section>
+                <section>
+                    <h4>Red</h4>
+
+                    <p>Quel est le test à écrire pour faire la plus petite étape ?</p>
+                    <p>Commencer par fail : tester le test</p>
+                    <aside class="notes">
+                        Tester le test : éviter les faux positifs.
+                    </aside>
+                </section>
+                <section>
+                    <h4>Green</h4>
+
+                    <p>Quel est la plus petite étape à faire pour faire passer le test ?</p>
+
+                    <aside class="notes">
+                        Bête et méchant : simplicité.
+                        Pas d'optimisation préature.
+                        YAGNI !
+                    </aside>
+                </section>
+
+                <section>
+                    <h4>Refactor</h4>
+
+                    <p>On nettoie</p>
+                    <p>On fait apparaître des concepts métiers</p>
+                </section>
+                <section>
+                    <img src="images/test_in_5_steps.jpg" alt="test creation order" height="500">
+                    <aside class="notes">
+                        /!\ dans certains langages il faut "Test" plutot que "Should"
+                    </aside>
+                </section>
+                <section>
+                    <h3>Avantages</h3>
+                    <ul>
+                        <li class="fragment">écrit les specs en même temps que les tests</li>
+                        <li class="fragment">plein de tests pour la non-regression</li>
+                        <li class="fragment">oblige à définir le besoin avant de coder</li>
+                        <li class="fragment">code testable == code modulaire</li>
+                        <li class="fragment">YAGNI : on évite d'écrire du code inutile</li>
+                        <li class="fragment">gain de temps : pas de débuggueur, ni de logs</li>
+                    </ul>
+
+                    <aside class="notes">
+                        modulaire : si on passe un mock à la place d'une BDD, ça veut dire qu'on peut passer n'importe
+                        quelle bdd
+                    </aside>
+                </section>
+            </section>
+            <section>
+                <h1>Pratique : FizzBuzz</h1>
+            </section>
+
+            <section>
+                <section>
+                    <h3>Unitaire</h3>
+                    <p>un seul concept métier par test</p>
+
+                    <p>Calculatrice : division<br>
+                        un test pour la division<br>
+                        un test pour l'erreur de division par zéro<br>
+                    </p>
+
+                    <p class="fragment">un seul assert ?</p>
+                </section>
+                <section>
+                    <p>XUnit (Juni, NUnit, CppUnit ...)</p>
+                    <p>d'autres frameworks</p>
+                    <p>vous pouvez facilement créer le votre</p>
+
+                    <aside class="notes">
+                        framework : test quelque chose (égalité ...) et pète une exception si erreur <br>
+                        bonus : intégré dans l'IDE, génère un rapport, fluent ...
+                    </aside>
+                </section>
+                <section>
+                    <h4>1st class citizen</h4>
+
+                    <p>Les règles qui s'appliquent au code s'appliquent aux tests</p>
+
+                    <p>qualité<br>
+                        clean-code<br>
+                        refactor => setup, teardown <br>
+                        git <br>
+                        relecture <br>
+                    </p>
+                    <aside class="notes">
+                        Certains font pareil pour les builds
+                    </aside>
+                </section>
+                <section>
+                    <img src="images/test_Csharp.png" alt="unit test C sharp" height="300">
+                    <img src="images/unit_test_kotlin.png" alt="unit test kotlin" height="100">
+                    <img src="images/unit_test_ruby.png" alt="unit test ruby" height="300">
+                </section>
+                <section>
+                    <h3>assert par défaut</h3>
+
+                    <pre><code data-trim="java">
+    assertTrue(bool); assertFalse(bool);
+    fail();
+    assertEquals(actual, expected) ;
+    assertEquals(actualDouble, expectedDouble, delta) ;
+    assertNotEquals(actual, expected)
+    assertArrayEquals(actual[], expected[]);
+    assertSame, assertNotSame, assertNull, assertNotNull
+    ...
+    </code></pre>
+                </section>
+                <section>
+                    <h3>Fluent assertion</h3>
+                    <pre><code data-trim="java">
+    assertThat(actual).isEqualTo(expected);
+
+    assertThat(list).isNotEmpty().hasSize(5)
+        .isSorted()
+        .containsExactlyInAnyOrder(value1, value2)
+        .allMatch(insideValue -> insideValue.getSomeField().equal(something))
+
+    assertThat(contentOf(xFile)).startsWith("The Truth")
+        .contains("Is Out").endsWith("There");
+    assertThat(directory).isDirectory().hasSameContentAs(otherDirectory);
+
+    assertThatExceptionOfType(SomeException::class.java).isThrownBy({ methodToTest() })
+        .withMessageContaining("boom")
+        .withCauseInstanceOf(IOException::class.java)
+
+    assertThat(jack).isEqualToComparingFieldByFieldRecursively(jackClone);
+    </code></pre>
+
+                    <p>Java : assertJ, Harmcrest<br>
+                        Javascript : chai, jest<br>
+                        PHP : phpspec, atoum <br>
+                        Go : gomega, Ruby : rspec<br>
+                    </p>
+
+                </section>
+                <section>
+                    <h3>Mocks</h3>
+
+                    <p>Les mocks permettent de créer des objets plutôt que d'utiliser les objets réels,
+                        de définir des comportement, d'espionner, de surveiller des actions ...
+                    </p>
+
+                    <pre><code data-trim="java">
+        @Test
+        public void shouldSaveFileOnS3ThenDelete() throws InterruptedException {
+            FileSystemService fileSystemService = mock(FileSystemService.class);
+            File aFile = mock(File.class);
+            when(fileSystemService.getFile(uuid)).thenReturn(aFile);
+
+            serviceToBeTested.saveFileOnAWS(uuid);
+
+            verify(awsStorageService).putObject(bucketName, uuid, aFile);
+            verify(aFile).delete();
+        }
+    </code></pre>
+                    <ul>
+                        <li>Mock -> objet "vide"</li>
+                        <li>Stub -> a un comportement défini</li>
+                        <li>Spy -> enregistre des interractions</li>
+                    </ul>
+
+                    <aside class="notes">
+                        <p>Possible de se créer son même son mock, sans lib</p>
+                        classic / detroit / chicago = utilise des objets réels (à la place de aFile)<br>
+                        London/mockist tdd : utilise des mock
+                    </aside>
+                </section>
+                <section>
+                    <h3>Automatisation</h3>
+
+                    <p>les tests ne sont utiles que s'ils sont lancés</p>
+
+                    <h4>CI</h4>
+                    <ul>
+                        <li>Pour vérifier que les tests passent quelque soit l'environnement</li>
+                        <li>Pour les batteries de tests très longues</li>
+                        <li>Parce que les devs oublient des fois de commiter !</li>
+                        <li>Pour tester tout le code et les régressions</li>
+                    </ul>
+                    <aside class="notes">
+                        Infinitest, continuous testing.<br>
+                        CI : principe : le serveur récupère toutes les sources sur le gestionnaire <br>
+                        build, lance tous les tests et dit OK / KO.
+                        <br>
+                    </aside>
+
+                </section>
+                <section>
+                    <h3>Test End-to-End : fausse bonne idée</h3>
+                    <ul>
+                        <li>Pas possible d'être exhaustif<br>
+                            Nécessite beaucoup de tests (combinatoires)
+                        </li>
+
+                        <li>Cher<br>
+                            définir l'environnement (bdd serveur, fichier, appels externes, ...)<br>
+                            définir toutes les entrées et toutes les sorties ...
+                        </li>
+
+                        <li>Long<br>
+                            donc executés rarement
+                        </li>
+
+                        <li>Fragile<br>
+                            faux positifs si changements d'environnement, d'année ...
+                        </li>
+                    </ul>
+
+
+                    <h4 class="fragment"><br>uniquement pour valider les cas principaux et représentatifs des US</h4>
+                    <aside class="notes">
+                        Bonus : si on a une liste d'étapes automatisées, ça veut dire qu'on a une liste d'étape qu'on peut
+                        jouer
+                        à la main pour la démo
+                    </aside>
+                </section>
+                <section>
+
+                    <h3>BDD - Cucumber</h3>
+                    <p>le business écrit dans sa langue :</p>
+
+
+                    <pre><code>
+    Feature: Is it Friday yet?
+    Everybody wants to know when it's Friday
+
+    Scenario Outline: Today is or is not Friday
+    Given today is &ltday>
+    When I ask whether it's Friday yet
+    Then I should be told &ltcode>
+
+    Examples:
+    | day | answer |
+    | "Friday" | "TGIF" |
+    | "Sunday" | "Nope" |
+    | "anything else!" | "Nope" |
+    </code></pre>
+
+                </section>
+                <section>
+                    <p>l'équipe de dev fait le lien entre le langage business et le code :</p>
+                    <pre><code data-trim="java">
+    public class Stepdefs {
+        private String today;
+        private String actualAnswer;
+
+        @Given("^today is \"([^\"]*)\"$")
+        public void today_is(String today) {
+            this.today = today;
+        }
+
+        @When("^I ask whether it's Friday yet$")
+        public void i_ask_whether_is_s_Friday_yet() {
+            this.actualAnswer = IsItFriday.isItFriday(today); // Call to prod code
+        }
+
+        @Then("^I should be told \"([^\"]*)\"$")
+        public void i_should_be_told(String expectedAnswer) {
+            assertEquals(expectedAnswer, actualAnswer);
+        }
+    }
+    </code></pre>
+                </section>
+            </section>
+            <section>
+                <h2>Attention: les tests permettent uniquement de prouver ce qui marche, pas l'absence de bugs</h2>
+            </section>
+
+            <section>
+                <h2>
+                    Code Retreat
+                </h2>
+                <section>
+                    <h3>Kata</h3>
+                    <p>
+                        un petit excercices de code
+                    </p>
+                    <p>
+                        un échauffement, une étude, un petit entrainement
+                    </p>
+
+                    <p>
+                        prendre le temps, sans la pression du résultat
+                    </p>
+
+                    <div class="fragment">
+                        <a href="https://www.codewars.com">Codewars</a><br>
+                        <a href="https://exercism.io/">exercism.io</a>
+                    </div>
+                </section>
+                <section>
+                    <h3>Coding Dojo</h3>
+                    <p class="fragment">Lieu où l'on étudie la voie du code</p>
+                    <ul class="block fragment">
+                        <li>Dave Thomas : katas du développeur</li>
+                        <li>Laurent Bossavit : faisons les en groupe</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Global Day of Code Retreat</h3>
+                    <p>Un gros coding Dojo</p>
+                    <p class="fragment"> d'une journée complète</p>
+                    <p class="fragment"> dans le monde entier</p>
+
+                    <div class="fragment">
+                        <p>17 Novembre 2018</p>
+                        <a href="https://www.coderetreat.org/">https://www.coderetreat.org/</a><br>
+                        <a href="https://www.meetup.com/fr-FR/CodeRetreat-Paris/">https://www.meetup.com/fr-FR/CodeRetreat-Paris/</a>
+                    </div>
+
+                    <aside class="notes">
+                        pour l'instant, pas de lieu à Paris,
+                        voir avec Arola ? le meetup Softare crafter ?
+                    </aside>
+                </section>
+            </section>
+
+
+            <section>
+                <h2>
+                    Comment ?
+                </h2>
+                <section>
+                    <ul>
+                        <li class="fragment">un binome</li>
+                        <li class="fragment">un ordinateur</li>
+                        <li class="fragment">un langage</li>
+                        <li class="fragment">IDE, test runner ...</li>
+                        <li class="fragment">un sujet</li>
+                        <li class="fragment">des contraintes</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>45 minutes,</p>
+                    <p class="fragment">et ...</p>
+                    <h3 class="fragment">Supprimez votre code !</h3>
+                </section>
+            </section>
+
+
+            <section>
+                <section>
+                    <h3>Qualité</h3>
+                    La qualité d'aujourd'hui est la vélocité de demain.
+                </section>
+
+                <section>
+                    <h2>TL; DR : 4 rules of Simple design</h2>
+                    <img src="images/4rules.png" alt="4 rules">
+                    <p>Kent Beck</p>
+                    <aside class="notes">
+                        duplication de connaissances métier.
+                    </aside>
+                </section>
+                <section>
+                    <h2>TL; DR 2:</h2>
+
+                    <img src="images/qualité.jpg" alt="qualité">
+
+                    <p>Les autres outils sont des indicateurs, mais en aucun cas des mesures fiables, et encore moins des
+                        objectifs.</p>
+
+                    <aside class="notes">
+                        Outils ? Sonar ? warnings IDE ?
+                        Complexité ?
+
+                        ce sont des outils de mesures, mais en aucun cas des objectifs
+                        on a vite fait à se focaliser sur le pourcentage de tests plutôt que leur utilité.
+                    </aside>
+                </section>
+
+                <section>
+                    <h4> La dette technique est un choix.</h4>
+
+                    <p>
+                        C'est un emprunt qu'il faudra rembourser, avec des intérets.
+                    </p>
+
+                    <blockquote class="fragment">
+                        Valide pour certains projets "one shot" : <br>
+                        un petit script pour trier un tas de données, un spike pour essayer une techno ...<br>
+                        Mais la plupart du temps les one-shots sont maintenus pendant des années.
+                    </blockquote>
+
+                    <h4 class="fragment">
+                        later is never
+                    </h4>
+                    <aside class="notes">
+                        Coder vite, sans tests, sans se former ... peut permettre de gagner un peu de temps, mais il faudra
+                        le rembourser plus tard. <br>
+                        Bien insister : si un manager demande de baisser la qualité, lui demander quand on remboursera.
+                        Parler en terme de dette et d'intérêts. <br>
+                    </aside>
+                </section>
+
+
+                <section>
+                    <h3>Clean-Code</h3>
+                    <img src="images/cleancode.jpg" alt="cleancode">
+                    <p>Robert C. Martin aka Uncle Bob</p>
+                </section>
+                <section>
+                    <h3>Clean-Code</h3>
+                    <blockquote>
+                        "Any fool can write code that a computer can understand.
+                        Good programmers write code that humans can understand."<br>
+                        Martin Fowler
+                    </blockquote>
+                    <blockquote>
+                        "Mal nommer les choses, c'est ajouter au malheur du monde !"<br>
+                        Albert Camus
+                    </blockquote>
+                    <blockquote>
+                        "There are only two hard things in Computer Science:<br>
+                        - cache invalidation,<br>
+                        - naming things"
+                        Phil Karlton<br>
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h4>Utilisez du vocabulaire métier</h4>
+
+                    <pre><code data-trim="java">
+    public List&lt;int[]&gt; getFlg() {
+      List&lt;int[]&gt; list1 = new ArrayList&lt;int[]&gt;();
+      for (int[] x : theList ) {
+        if (x[0] == 4)
+          list1.add(x);
+      }
+
+      return list1;
+    }
+                        </code></pre>
+
+
+                    <pre class="fragment"><code data-trim class="java">
+    public List&lt;Cell&gt; getFlaggedCells() {
+      List&lt;Cell&gt; flaggedCells = new ArrayList&lt;Cell&gt;();
+      for (Cell cell : gameBoard ) {
+        if (cell.isFlagged())
+          flaggedCells.add(cell);
+      }
+
+      return flaggedCells;
+    }
+                        </code></pre>
+
+                    <aside class="notes">
+                        Parlez au business !
+                        en théorie, un PO ou un utilisateur devrait pouvoir lire votre code.<br>
+                        Ou au moins les tests et titres de fonctions.<br>
+                        Bonus : en parlant au business, vous comprendrez vraiment le problème métier.<br>
+                        BABEL
+                    </aside>
+                </section>
+                <section>
+                    <h4>Séparez les niveaux d'abstraction</h4>
+
+                    <pre><code data-trim="java">
+    public RGBColor readCurrentColor(BlinkLed led) {
+        device.sendCommand(new ReadColorRequest(led));
+
+        byte[] response = device.readResponse();
+
+        int red = response[2] >= 0 ? response[2] : response[2] + 256;
+        int green = response[3] >= 0 ? response[3] : response[3] + 256;
+        int blue = response[4] >= 0 ? response[4] : response[4] + 256;
+        return new RGBColor(red, green, blue);
+    }
+                        </code></pre>
+                    <pre class="fragment"><code data-trim class="java">
+    public RGBColor readCurrentColor(BlinkLed led) {
+        device.sendCommand(new ReadColorRequest(led));
+        byte[] response = device.readResponse();
+        return extractColor(response);
+    }
+    private RGBColor extractColor(byte[] response) {
+        int red = convertToPositiveInt(response[2]);
+        int green = convertToPositiveInt(response[3]);
+        int blue = convertToPositiveInt(response[4]);
+        return new RGBColor(red, green, blue);
+    }
+    private int convertToPositiveInt(byte byt) {
+        return byt >= 0 ? byt : byt + 256;
+    }
+    </code></pre>
+
+                    <aside class="notes">
+
+                    </aside>
+                </section>
+
+                <section>
+                    <h4>Séparez les niveaux d'abstraction</h4>
+
+                    <ul>
+                        <li>Extract Method</li>
+                        <li>Extract Variables</li>
+                        <li>Extract Field</li>
+                        <li>Donner des noms parlants</li>
+                        <li>Une seule fonctionnalité par méthode</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h4>Commentaires</h4>
+
+                    <img src="images/comment.jpg" alt="Comments">
+                </section>
+                <section>
+                    <h4>Commentaires</h4>
+
+                    <img src="images/comment2.jpg" alt="Comments">
+                </section>
+
+                <section>
+                    <h4>Inutiles ou Faux</h4>
+
+                    <pre><code data-trim class="java">
+    /*
+    * A comment to please checkstyle
+    */</code></pre>
+                    <pre><code data-trim>
+    /*
+    * Set the port
+    *
+    * @params port
+    */
+    public void setPort(Port port) {this.port=port}
+    </code></pre>
+                    <pre><code data-trim>
+    ...
+            } /* end for */
+            dao.flush();
+          default :
+            break;
+          } /* end switch */
+        } /* end if */
+      } /* end if */
+    } catch ...
+    </code></pre>
+                    <aside class="notes">
+                        évidemment, il y a en d'autres, des pas à jours, des faux, des inutiles.<br>
+                        et le code commenté (mort), c'est pas comme si on avait des systèmes de gestion de version pour ça.
+
+                    </aside>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>Soit obsolètes et faux</li>
+                        <li>Soit redondant et inutiles</li>
+                    </ul>
+                    <br>
+                    <div class="fragment"><p>Exceptions:</p>
+                        <ul>
+                            <li>Public API</li>
+                            <li>Interface</li>
+                        </ul>
+                    </div>
+
+                    <br>
+                    <div class="fragment">
+                        <ul>
+                            <li>Les Test expliquent le Quoi</li>
+                            <li>Le Code explique le comment</li>
+                        </ul>
+                    </div>
+                    <aside class="notes">
+                        s'il y a un commentaire pour 2 lignes : extraire une méthode, renommer la méthode, et supprimer le
+                        commentaire
+                    </aside>
+                </section>
+                <section>
+                    <h4>Loi de Demeter</h4>
+                    <p>Pas bien !</p>
+                    <pre><code data-trim>
+    a.getB().getC().doThings();
+                    </code></pre>
+
+                    <div class="fragment"><p>Bien !</p>
+                        <pre><code data-trim>
+    a.doThings();
+                    </code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h4>Injection de dépendances</h4>
+                    <p>Pas bien !</p>
+                    <pre><code data-trim>
+    public class Client {
+      private Service service;
+
+      public Client() {
+        this.service = new ServiceLieAUneDatabasePrecise();
+      }
+
+      public String greet() {
+        return "Hello " + service.getName();
+      }
+    }
+
+                    </code></pre>
+
+                    <div class="fragment">
+                        <p>Bien !</p>
+                        <pre><code data-trim>
+    public class Client {
+      private Service service;
+
+      public Client(Service service) {
+        this.service = service;
+      }
+        ...
+    }
+                    </code></pre>
+                    </div>
+                </section>
+                <section>
+                    <p>Des frameworks permettent de faire "facilement" de l'injection de dépendances.</p>
+                    <p>A voir si la complexité et les contraintes qu'ils apportent sont compensés.</p>
+
+                    <aside class="notes">
+                        Plein de framework font le lien entre les différents objets et les constructeurs.
+                        En Java : Spring, Guice.
+                        On se retrouve avec 40 services injectés par object, c'est très très lourd.
+                    </aside>
+                </section>
+
+                <section>
+                    <p>Ne jamais coupler avec des librairies externes !</p>
+                    <p>Jamais</p>
+                    <p>Toujours utiliser des abstractions et des façades</p>
+                </section>
+
+                <section>
+                    <h2>Smells</h2>
+                    <div>
+                        <ul>
+                            <li><span class="red">S</span>ingleton</li>
+                            <li><span class="red">T</span>ight coupling</li>
+                            <li><span class="red">U</span>ntestable</li>
+                            <li><span class="red">P</span>remature Optimisation</li>
+                            <li><span class="red">I</span>ndescriptive naming</li>
+                            <li><span class="red">D</span>uplication</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Mieux</h2>
+                    <ul>
+                        <li>SOLID principles</li>
+                        <li>null -> objet "vide"</li>
+                        <!--li class="fragment">do not check exceptions</li-->
+                        <li>héritage -> compositions</li>
+                        <li>if/switch -> polymorphisme</li>
+                        <li>pas de singletons</li>
+                    </ul>
+
+                    <aside class="notes">
+                        null -> objet métier représentant le vide !
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Solid</h2>
+                    <ul>
+                        <li class="fragment">S - Single-responsiblity principle</li>
+                        <li class="fragment">O - Open-closed principle</li>
+                        <li class="fragment">L - Liskov substitution principle</li>
+                        <li class="fragment">I - Interface segregation principle</li>
+                        <li class="fragment">D - Dependency Inversion Principle</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>S - Single-responsiblity principle</h2>
+                    <blockquote>
+                        A class should have one and only one reason to change, meaning that a class should have only one
+                        job.
+                    </blockquote>
+                    <p class="fragment">
+                        Evitez les Managers<br>
+                        Un manager fait un peu de tout mais mal, beaucoup de rien et embrouille tout le monde.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>O - Open-closed principle</h2>
+                    <blockquote>
+                        Objects or entities should be open for extension, but closed for modification.
+                    </blockquote>
+
+                    <p class="fragment">
+                        Penser héritage
+                    </p>
+                    <aside class="notes">
+                        s'il y a une modification à faire -> héritage, polymorphisme.<br>
+                        pas de if dans la classe<br>
+                        Shape -> area <br>
+                        2 implems pour cercle et rectangle, plutôt qu'un if<br>
+                        cf enregistrement activities splittés en 3.
+                    </aside>
+                </section>
+                <section>
+                    <h2>L - Liskov substitution principle</h2>
+                    <blockquote>
+                        Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for
+                        objects y of type S where S is a subtype of T.
+                    </blockquote>
+                    <blockquote class="fragment">
+                        objects in a program should be replaceable with instances of their subtypes without altering the
+                        correctness of that program.
+                    </blockquote>
+                    <aside class="notes">
+                        de Barbara Liskov et Jeannette Wing<br>
+                        Toutes les méthodes de la classe mère sont utilisables (surchargée ou non) par la classe fille.
+                    </aside>
+                </section>
+                <section>
+                    <h2>I - Interface segregation principle</h2>
+                    <blockquote>
+                        A client should never be forced to implement an interface that it doesn't use or clients shouldn't
+                        be forced to depend on methods they do not use.
+                    </blockquote>
+
+
+                    <aside class="notes">
+                        un objet peut implémenter plusieurs interfaces.<br>
+                        carré => losange + rectangle
+                    </aside>
+                </section>
+                <section>
+                    <h2>D - Dependency Inversion Principle</h2>
+                    <blockquote>
+                        one should "depend upon abstractions, [not] concretions."
+                    </blockquote>
+                    <blockquote>
+                        A. High level modules should not depend upon low level modules. Both should depend upon
+                        abstractions.<br>
+                        B. Abstractions should not depend upon details. Details should depend upon abstractions.
+                    </blockquote>
+                    <aside class="notes">
+                        un service ne doit pas connaitre le type de stocage d'une bdd<br>
+                        la bdd doit savoir comment on l'utilise
+                    </aside>
+                </section>
+            </section>
+
+            <section>
+                <h2>4 rules of Simple design</h2>
+                <img src="images/4rules.png" alt="4 rules">
+
+                <p>Kent Beck</p>
+            </section>
+
+
+            <section>
+                <section>
+                    <h2>Legacy-Code</h2>
+                    <h3>Définition </h3>
+                    <ul>
+                        <li class="fragment">existant ?</li>
+                        <li class="fragment">de mauvaise qualité ?</li>
+                        <li class="fragment">vieux ?</li>
+                        <li class="fragment">on ne sait pas ce qu'il fait ?</li>
+                        <li class="fragment">plein de dépendances ?</li>
+                    </ul>
+                    <br>
+                    <h4 class="fragment">Du code sans tests</h4>
+                </section>
+                <section>
+
+                    <h3>La seule vérité est le code</h3>
+
+                    <p class="fragment">Les specs ne sont pas à jour et pas fiables</p>
+
+                    <br>
+                    <h4 class="fragment">Ne rien changer au fonctionnement</h4>
+                    <p class="fragment">Un bug suffisamment vieux devient une feature</p>
+                    <p class="fragment">Toujours demander au PO</p>
+                </section>
+
+                <section>
+                    <h3>Pourquoi refactorer ?</h3>
+
+                    <p class="fragment">Le code fonctionne très bien, ne pas refactorer pour le principe.<br>
+                        C'est couteux et risqué.</p>
+
+                    <p class="fragment">Pour comprendre le fonctionnement ?</p>
+                    <p class="fragment">Pour ajouter une feature ?</p>
+                    <p class="fragment">Pour rembourser la dette ?</p>
+                    <blockquote class="fragment">"Make the change easy before making the easy change."<br>
+                        Kent Beck
+                    </blockquote>
+
+                    <br>
+                    <h4 class="fragment">Time-boxer</h4>
+                </section>
+                <section>
+                    <h3>Gestion de version</h3>
+
+                    <p class="fragment">Pouvoir toujours revenir à un état stable.</p>
+                    <p class="fragment">S'autoriser à refactorer, renommer, bouger des choses pour rien, juste pour
+                        découvrir le code.</p>
+                </section>
+                <section>
+                    <h3>Golden Master Test</h3>
+
+                    <p>Le système est une boite noire, on vérifie que pour les mêmes entrées on a toujours les mêmes
+                        sorties</p>
+                    <uL>
+                        <li class="fragment">Vérifier avec la couverture de code. Attention, pas toujours fiable</li>
+                        <li class="fragment">Vérifier en changeant des bouts de code. (Red du TDD)</li>
+                        <li class="fragment">Sérialiser les objets, ou rediriger les sorties.</li>
+                        <li class="fragment">Librairie Approvals</li>
+                        <li class="fragment">Utiliser des données représentatives (copie de prod)</li>
+                        <li class="fragment">Vérifier qu'on ne touche pas d'environnement de prod.</li>
+                    </uL>
+                    <aside class="notes">
+                        ce n'est pas parcequ'on rentre dans du code qu'on teste les asserts.<br>
+                        http://approvaltests.com/<br>
+                        .Net
+                        C++
+                        Java
+                        Lua
+                        NodeJS
+                        Objective-C
+                        Perl
+                        Python
+                        Go
+                        Js
+                    </aside>
+                </section>
+                <section>
+                    <h4 class="fragment">Test Unitaires</h4>
+
+                    <p class="fragment">Créer une batterie de tests unitaires qui permmettent d'avoir des specs.</p>
+
+                    <ul>
+                        <li class="fragment">Rendre le code testable en supprimant les dépendances</li>
+                        <li class="fragment">Commencer par la branche la plus courte</li>
+                        <li class="fragment">Penser à l'héritage et à faire un objet testable</li>
+                        <li class="fragment">Outils de refacto automatisés de l'IDE</li>
+                    </ul>
+                    <aside class="notes">
+                        rendre le code testable -> héritage, avant d'arriver à de l'injection
+                    </aside>
+                </section>
+                <section>
+                    <h4>Refactorer</h4>
+
+                    <ul>
+                        <li class="fragment">Casser les appels à l'extérieur (BDD, fichiers, mails ...)</li>
+                        <li class="fragment">Casser les appels statiques</li>
+                        <li class="fragment">Mettre de l'injection de dépendances</li>
+                        <li class="fragment">Commencer par la branche la plus longue</li>
+                        <li class="fragment">Tester en continue</li>
+                        <li class="fragment">Baby-steps</li>
+                    </ul>
+                    <a href="https://refactoring.com/catalog" class="fragment">https://refactoring.com/catalog/</a>
+                    <a href="https://sourcemaking.com/refactoring/refactorings" class="fragment">https://sourcemaking.com/refactoring/refactorings</a>
+                    <aside class="notes">
+                        infinitest<br>
+                        baby step + git
+                    </aside>
+                </section>
+                <section>
+                    <h4>Nommer les choses</h4>
+
+                    <ul>
+                        <li class="fragment">Commenter pour donner un nom a un paquet de lignes</li>
+                        <li class="fragment">extraire ces lignes dans une méthode</li>
+                        <li class="fragment">Donner comme nom à la méthode le commentaire</li>
+                        <li class="fragment">Supprimer le commentaire</li>
+                    </ul>
+
+                    <blockquote class="fragment"    du por>Comprendre ce que fait le code et mettre cette compréhension dans le code.</blockquote>
+
+                </section>
+                <section>
+                    <h4 class="fragment">En dernier recours</h4>
+
+                    <p class="fragment">Reflection</p>
+                    <p class="fragment">Mock d'objet statiques</p>
+
+                    <aside class="notes">
+                        très risqué !
+                    </aside>
+                </section>
+                <section>
+                    <h4 class="fragment">Quand ?</h4>
+                    <p class="fragment">Règle du scout : je rends l'endroit plus propre que quand j'y suis rentré</p>
+
+                    <p class="fragment">Tout d'un coup</p>
+                    <p class="fragment">au fil de l'eau</p>
+
+                    <aside class="notes">
+                        d'un coup : lourd, peu de valeur, mais mieux après
+                        au fil de l'eau : on garde les "intérêts" à payer, mais on avance
+                        motivation
+                    </aside>
+                </section>
+                <section>
+
+                    <p>Ne pas changer les interfaces externes et API sans accord du PO</p>
+                    <p>ce n'est plus du refactoring, mais du changemnt</p>
+
+                    <aside class="notes">
+                    </aside>
+                </section>
+            </section>
+
+            <section>
+                <h2>Code-review</h2>
+                <section>
+
+                    <h4>Pourquoi ?</h4>
+                    <ul>
+                        <li class="fragment">vérifier que la feature est bien réalisée</li>
+                        <li class="fragment">éviter des bugs</li>
+                        <li class="fragment">apprendre la technique</li>
+                        <li class="fragment">apprendre le métier</li>
+                        <li class="fragment">partager les norme de codage</li>
+                    </ul>
+                    <p class="fragment">l'apprentissage est dans les deux sens</p>
+                </section>
+                <section>
+                    <ul>
+                        <li>
+                            Partir du principe que tout doit être questionné
+                        </li>
+                        <li>
+                            Partir du principe qu'il y a toujours une explication
+                        </li>
+                    </ul>
+                    <br><br>
+                    <div class="fragment">
+                        <h4>Toujours respecter les autres</h4>
+                        <p>Que l'on soit l'auteur-e du code ou la personne qui relit.</p>
+                        <p>On critique le code, pas la personne</p>
+                        <blockquote>
+                            Hard with code, soft with human
+                        </blockquote>
+                    </div>
+                    <aside class="notes">
+                        TODO : check citation
+                        Il n'y a pas de question bêtes<br>
+                        respecter les autres, toujours !<br>
+                        sinon risque qu'ils ne posent plus de questions
+                    </aside>
+                </section>
+                <section>
+                    <h4>Ce n'est pas</h4>
+                    <ul>
+                        <li>Vérifier que les tests passent</li>
+                        <li>Parler du formattage</li>
+                        <li>Parler de l'architecture</li>
+                    </ul>
+                    <aside class="notes">
+                        formattage, test : auto<br>
+                        archi : trop tard
+                    </aside>
+                </section>
+                <section>
+                    <p>En asynchrone, sur un outil de gestion de conf.</p>
+                    <p>En discutant au bureau de son/sa collègue.</p>
+                    <p class="fragment">l'écrit peut être ambigue, surtout dans une langue qu'on maitrise mal.<br>
+                        Attention aux tournures. <br>
+                        Préférer les questions plutôt que les affirmations.</p>
+                </section>
+                <section>
+                    <p>500 lignes de code à relire ? Ok, on merge</p>
+                    <p>15 lignes à relire ? 15 commentaires ou questions.</p>
+
+                    <h4>Faire des toutes petites merge requests</h4>
+                </section>
+            </section>
+
+            <section>
+                <h2>
+                    Pair-programming
+                </h2>
+                <section>
+                    <h4>Pourquoi ?</h4>
+                    <ul>
+                        <li class="fragment">éviter des bugs</li>
+                        <li class="fragment">apprendre la technique</li>
+                        <li class="fragment">apprendre le contexte métier</li>
+                        <li class="fragment">partager les norme de codage</li>
+                        <li class="fragment">propriété collective du code</li>
+                        <li class="fragment">obliger à verbaliser le problème et la solution</li>
+                        <li class="fragment">discuter des besoins avant de coder</li>
+                        <li class="fragment">augmenter la concentration</li>
+                        <li class="fragment">être une équipe, discuter avec des humains</li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h4>Très fatiguant</h4>
+                    <ul>
+                        <li class="fragment">commencer petit (1-2h par jour)</li>
+                        <li class="fragment">faire des pauses régulières</li>
+                        <li class="fragment">Pomodoro</li>
+                        <li class="fragment">évitez les grands open-spaces</li>
+                        <li class="fragment">changez de binômes</li>
+                        <li class="fragment">faites tourner le clavier</li>
+                        <li class="fragment">toujours dans le respect de l'autre</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h4>Pas possible ?</h4>
+                    <ul>
+                        <li class="fragment">ne demandez pas, faites le.</li>
+                        <li class="fragment">ne nommez pas ça "pair-programming", demandez juste de l'aide</li>
+                        <li class="fragment">utilisez un canard en plastique (ou n'importe quel objet)</li>
+                    </ul>
+
+                    <p class="fragment">De toutes façons vous en faites déjà !</p>
+                </section>
+
+                <section>
+                    <h3>Même en remote ?</h3>
+
+                    <div class="fragment">Oui,</div>
+                    <div class="fragment"> mais necessite une préparation matérielle</div>
+
+                    <p class="fragment">Comme tout passage en remote :D </p>
+
+                    <aside class="notes">
+                        bruits (casque, micros, open-space)<br>
+                        bande-passante<br>
+                        partage d'écran<br>
+                        échange de clavier moins souvent<br>
+
+                        déjà fait, ludo le fait régulièrement.
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Avec des "étrangers" ?</h3>
+
+                    <aside class="notes">
+                        dev d'autres équipes,
+                        Regard neuf, expérience,
+                        permettre d'intégrer quelqu'un
+
+
+                        Testeur, PO, manager, RH, touriste ...
+                        Oblige à tout expliquer très très simplement.
+                        des questions "simples" qui obligent à remettre en question chaque décisions
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Mob-programing</h3>
+
+                    <p>Pourquoi s'arrêter à 2 ?</p>
+
+                    <aside class="notes">
+                        limiter à 8.
+                        loi des 2 pieds.
+                    </aside>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h3>Git</h3>
+
+                    <p>Un serveur à distance, un repo local et un workspace</p>
+                    <img src="images/git_workflow_simple.png" alt="git workflow simple" height="500">
+                </section>
+                <section>
+                    <h3>Git</h3>
+
+                    <img src="images/git_workflow.png" alt="git workflow" height="500">
+
+                </section>
+                <section>
+                    <img src="images/git_branch.png" alt="git branch" height="500">
+
+                    <p>Branch : sépare en deux pour travailler isolé<br>
+                        Merge : combine deux branches
+                    </p>
+                </section>
+                <section>
+                    <img src="images/merge_rebase_depart.png" alt="depart" height="250">
+                    <img src="images/merge.png" alt="merge" height="250">
+                    <img src="images/rebase.png" alt="rebase" height="250">
+
+                    <p>origine, merge et rebase</p>
+                </section>
+                <section>
+                    <p><b>git init</b> : crée un repo local sans avoir de repo à distance, pour démarrer</p>
+                    <p><b>git rebase -i HEAD~3</b> : permet de réécrire les 3 derniers commits</p>
+                    <p><b>git stash</b> : permet de cacher les fichiers locaux</p>
+                    <p><b>git stash pop</b> : sur du dernier stash</p>
+
+                    <a href="http://ndpsoftware.com/git-cheatsheet.html">Guide interactif</a>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h3>Continuous Integration</h3>
+
+                    <p>Principe : un serveur "récupère" les sources et lance un build et tout les tests<br>
+                        Ca permet d'éviter les soucis à base de "ça marche sur ma machine"<br>
+                    </p>
+
+                    <img src="images/forge-intermediate.png" alt="forge jenkins" height="400">
+
+                </section>
+
+                <section>
+                    <ul>
+                        <li class="fragment">les devs travaillent en local</li>
+                        <li class="fragment">puis commitent sur le repo</li>
+                        <li class="fragment">le serveur CI surveille le repo et checkouts les modifications</li>
+                        <li class="fragment">le serveur CI lance un build, des tests, des analyses ...</li>
+                        <li class="fragment">le serveur informe l'équipe du résultat (slack, "radiateur", son ...)</li>
+                        <li class="fragment">une revue de code humaine peut faire partie du workflow</li>
+                        <li class="fragment">une analyse automatique du code peut faire partie du workflow (sonar)</li>
+                        <li class="fragment">si KO : toujours réparer le build en priorité</li>
+                        <li class="fragment">Profiter de l'automatisation pour lancer des tests plus longs (performances) la
+                            nuit ou le week-end
+                        </li>
+                    </ul>
+
+                    <h4 class="fragment">Pas de commit sur un build cassé : on répare d'abord.</h4>
+
+                    <aside class="notes">
+                        ne pas punir si build cassé<br>
+                        réparé par casseur (mais les autres aident)<br>
+                        utilisez les outils jenkins ? ou gratuit sur gitlab.<br>
+                        executer le build dès qu'il y a un commit, un ajout, une modif.
+                    </aside>
+                </section>
+                <section>
+
+                    <ul>
+                        <li class="fragment">défini clairement le process de build</li>
+                        <li class="fragment">permet de valider fréquemment</li>
+                        <li class="fragment">permet d'avoir toujours une version livrable</li>
+
+                    </ul>
+
+                    <h4 class="fragment">Pas de commit sur un build cassé : on répare d'abord.</h4>
+
+                    <aside class="notes">
+                        ne pas punir si build cassé<br>
+                        utilisez les outils jenkins ? ou gratuit sur gitlab.<br>
+                        executer le build dès qu'il y a un commit, un ajout, une modif.
+                    </aside>
+                </section>
+                <section>
+                    <h3>Continuous Delivery</h3>
+
+                    <p>Et pourquoi ne pas automatiquement déployer une nouvelle version ?<br>
+                        Soit en prod, soit en pré-prod, ou béta pour test et démo.<br>
+                    </p>
+
+                    <img src="images/pipeline-concept.png" alt="pipeline" height="420">
+                </section>
+                <section>
+                    <h3>Continuous Delivery / Deployement</h3>
+
+                    <img src="images/continuous_deployement.gif" alt="continuous_deployement">
+                </section>
+                <section>
+                    <h3>Guerilla CI</h3>
+
+                    <p>Ne demandez pas l'autorisation, c'est trop long<br>
+                        installez un serveur Jenkins (et Gitlab) sur un vieux PC qui traine dans le coin.<br>
+                    </p>
+
+                    <img src="images/radiators-guerilla.png" alt="rebase" height="420">
+
+                </section>
+
+                <section>
+                    <h3>Pipeline as Code</h3>
+
+                    <p>Il est tout à fait possible de versionner ses jobs qui lancent les builds
+                    </p>
+
+                    <aside class="notes">
+                        Pour les jobs complexes.<br>
+                        pour créer automatiquement de nouveaux jobs
+                    </aside>
+                </section>
+
+            </section>
+
+            <section>
+                <section>
+                    <h3>static analysis</h3>
+                    <p>Analyse du code
+                    </p>
+                    <h3>Dynamic analysis</h3>
+                    <p>Analyse du fonctionnement du logiciel</p>
+                </section>
+                <section>
+                    <h3>Cyclomatic complexity</h3>
+                    <p>nombres de chemins possibles.</p>
+
+                    <h3>Class coupling</h3>
+                    <p>interractions entre les classes</p>
+
+                    <h3>Depth of inheritance</h3>
+                    <p>niveau d'héritage</p>
+                </section>
+                <section>
+                    <h3>Code Coverage</h3>
+                    <p>Code utilisé par les tests.<br>
+                        Mesure, pas Métrique.
+                    </p>
+                </section>
+
+            </section>
+            <section>
+                <section>
+                    <h3>Definition of Done</h3>
+
+                    <p>Indispensable</p>
+                    <p>partagée</p>
+                    <p>transparente</p>
+                    <p>évolutive</p>
+                </section>
+                <section>
+                    <p>Crée par l'équipe de dev, en fonction des autres équipes de l'organisation</p>
+                    <p>Si plusieurs équipes : les DoD doivent permettent de s'intégrer.</p>
+
+                    <p>permet d'avoir un incréement utilisable<br>
+                        définit le niveau de qualité de l'équipe</p>
+                    <p>à rediscuter à chaque rétro.</p>
+                </section>
+                <section>
+                    <ul>
+                        <li>Les test fonctionnels passent</li>
+                        <li>pas de régression</li>
+                        <li>code relu</li>
+                        <li>doc écrite</li>
+                    </ul>
+                    <p>permet d'avoir un incréement utilisable<br>
+                        définit le niveau de qualité de l'équipe</p>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h3>Burn Down Chart</h3>
+
+                    <img src="images/burndown.png">
+                    <aside class="notes">
+                        le reste à faire peut augmenter.
+                    </aside>
+                </section>
+                <section>
+                    <h3>Burn Up Chart</h3>
+
+                    <img src="images/burnup.png">
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h3>Cheat PSD</h3>
+
+                    <p>throughout development of the software</p>
+                    <p>Product => PO</p>
+                    <p>Scrum => SM</p>
+                    <p>Sprint => Dev</p>
+
+                    <p>/!\ may / must / should</p>
+                </section>
+                <section>
+                    <p>Pas d'architecte, pas de sprint 0</p>
+                    <p>Dev Team = Developer (même si ça peut être des testeurs ou autres)</p>
+                    <p>Dev Team = Cross-functional</p>
+                    <p>Dev team : unie, donc tout le monde est responsable, pas d'individualité.</p>
+                    <p>Tout le monde peut faire de tout.</p>
+
+                    <p>le PO priorise</p>
+                    <aside class="notes">
+                        dev team unie : les testeurs peuvent aider à coder si à la boure et vice versa.<br>
+                        les taches sont affectées à l'équipe, pas à une seule personne
+                    </aside>
+                </section>
+                <section>
+                    <p>Lisez le scrum guide, en anglais</p>
+                    <p>Lisez les glossaires</p>
+                    <p>faites plein d'examens blancs, et ceux des autres rôles</p>
+                </section>
+            </section>
+
+        </div>
+    </div>
+
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.js"></script>
+
+    <script>
+                // More info about config & dependencies:
+                // - https://github.com/hakimel/reveal.js#configuration
+                // - https://github.com/hakimel/reveal.js#dependencies
+                Reveal.initialize({
+                    dependencies: [
+                        { src: 'plugin/markdown/marked.js' },
+                        { src: 'plugin/markdown/markdown.js' },
+                        { src: 'plugin/notes/notes.js', async: true },
+                        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                    ]
+                });
+
+    </script>
+    </body>
+    </html>

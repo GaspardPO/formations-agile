@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Code-Retreat et Software Crafting</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Gaspard POINTEAU">
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/white.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h2>
+                Code Retreat
+            </h2>
+            <section>
+                <h3>Kata</h3>
+                <p>
+                    un petit excercices de code
+                </p>
+                <p>
+                    un échauffement, une étude, un petit entrainement
+                </p>
+
+                <p>
+                    prendre le temps, sans la pression du résultat
+                </p>
+
+                <div class="fragment">
+                    <a href="https://www.codewars.com">Codewars</a><br>
+                    <a href="https://exercism.io/">exercism.io</a>
+                </div>
+            </section>
+            <section>
+                <h3>Coding Dojo</h3>
+                <p class="fragment">Lieu où l'on étudie la voie du code</p>
+                <ul class="block fragment">
+                    <li>Dave Thomas : katas du développeur</li>
+                    <li>Laurent Bossavit : faisons les en groupe</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Global Day of Code Retreat</h3>
+                <p>Un gros coding Dojo</p>
+                <p class="fragment"> d'une journée complète</p>
+                <p class="fragment"> dans le monde entier</p>
+
+                <div class="fragment">
+                    <p>17 Novembre 2018</p>
+                    <a href="https://www.coderetreat.org/">https://www.coderetreat.org/</a>
+                </div>
+
+                <aside class="notes">
+                </aside>
+            </section>
+        </section>
+
+
+        <section>
+            <h2>
+                Comment ?
+            </h2>
+            <section>
+                <ul>
+                    <li class="fragment">un binome</li>
+                    <li class="fragment">un ordinateur</li>
+                    <li class="fragment">un langage</li>
+                    <li class="fragment">IDE, test runner ...</li>
+                    <li class="fragment">un sujet</li>
+                    <li class="fragment">des contraintes</li>
+                </ul>
+            </section>
+            <section>
+                <p>45 minutes,</p>
+                <p class="fragment">et ...</p>
+                <h3 class="fragment">Supprimez votre code !</h3>
+            </section>
+        </section>
+
+        <section>
+            <h2>4 rules of Simple design</h2>
+            <img src="images/4rules.png" alt="4 rules">
+
+            <p>Kent Beck</p>
+        </section>
+        <section>
+            <h2>
+                Game of Life
+            </h2>
+            <section>
+                <img src="images/Game_of_life_torus_100_100_1500.gif" alt="Game of Life example" height="500">
+            </section>
+            <section>
+                <ul>
+                    <li>Any live cell with fewer than two live neighbors dies, as if caused by under population.</li>
+                    <li>Any live cell with two or three live neighbors lives on to the next generation.</li>
+                    <li>Any live cell with more than three live neighbors dies, as if by overpopulation.</li>
+                    <li>Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.</li>
+                </ul>
+            </section>
+            <section>
+                <img src="images/gameofliferules.jpg" alt="game of life rules" height="550">
+            </section>
+        </section>
+
+
+        <section>
+            <h2>
+                Mars Rover
+            </h2>
+            <section>
+                <img src="images/xkcd-mars-rover.png" alt="Game of Life example" height="450">
+                <p><a href="https://www.xkcd.com/695/">https://www.xkcd.com/695/</a></p>
+            </section>
+            <section>
+                <b>Develop an api that moves a rover around on a grid.</b>
+               <div  class="fragment">
+                <ul>
+                    <li> You are given the initial starting point (x,y) of a rover and the direction (N,S,E,W) it is
+                        facing.
+                    </li>
+                    <li> The rover receives a character array of commands.</li>
+                    <li> Implement commands that move the rover forward/backward (f,b).</li>
+                    <li> Implement commands that turn the rover left/right (l,r).</li>
+                </ul>
+               </div>
+                <i class="fragment">
+                    <p>Bonus:</p>
+                    <ul >
+                        <li> Implement wrapping from one edge of the grid to
+                            another. (planets are spheres after
+                            all)
+                        </li>
+                        <li> Implement obstacle detection before each move to a
+                            new square. If a given sequence of
+                            commands
+                            encounters an obstacle, the rover moves up to the last possible point and reports the
+                            obstacle.
+                        </li>
+                    </ul>
+                </i>
+            </section>
+        </section>
+    </div>
+</div>
+
+
+<script src="../lib/js/head.min.js"></script>
+<script src="../js/reveal.js"></script>
+
+<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Code-Retreat et Software Crafting</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Gaspard POINTEAU">
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/white.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+
+        <section>
+            <h2>Une batterie de tests pour du code Legacy en quelques minutes avec Approval Test</h2>
+            <p>
+                <small>Gaspard POINTEAU<br><a href="http://twitter.com/Gaspard_PO">@Gaspard_PO</a></small>
+            </p>
+        </section>
+
+
+        <section>
+            <section>
+                <h2>Legacy-Code</h2>
+                <h3>Définition </h3>
+                <ul>
+                    <li class="fragment">existant ?</li>
+                    <li class="fragment">de mauvaise qualité ?</li>
+                    <li class="fragment">vieux ?</li>
+                    <li class="fragment">on ne sait pas ce qu'il fait ?</li>
+                    <li class="fragment">plein de dépendances ?</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Legacy-Code</h2>
+
+                <h3 class="fragment">Du code sans tests</h3>
+            </section>
+            <section>
+
+                <h3>La seule vérité est le code</h3>
+
+                <p class="fragment">Les specs ne sont pas à jour et pas fiables</p>
+
+                <br>
+                <h4 class="fragment">Ne rien changer au fonctionnement</h4>
+                <p class="fragment">Un bug suffisamment vieux devient une feature</p>
+                <p class="fragment">Toujours demander au PO</p>
+            </section>
+
+
+            <section>
+                <h3>Golden Master Test</h3>
+
+                <p>Le système est une boite noire, on vérifie que pour les mêmes entrées on a toujours les mêmes
+                    sorties</p>
+                <uL>
+                    <li class="fragment">Vérifier avec la couverture de code. Attention, pas toujours fiable</li>
+                    <li class="fragment">Vérifier en changeant des bouts de code. (Red du TDD)</li>
+                    <li class="fragment">Sérialiser les objets, ou rediriger les sorties.</li>
+                    <li class="fragment">Librairie Approvals</li>
+                    <li class="fragment">Utiliser des données représentatives (copie de prod)</li>
+                    <li class="fragment">Vérifier qu'on ne touche pas d'environnement de prod.</li>
+                </uL>
+            </section>
+            <section>
+                <h3>Approvals</h3>
+
+                <ul>
+                    <li>.Net</li>
+                    <li>C++</li>
+                    <li>Java</li>
+                    <li>Lua</li>
+                    <li>NodeJS</li>
+                    <li>Objective-C</li>
+                    <li>Perl</li>
+                    <li>Python</li>
+                    <li>Go</li>
+                    <li>Js</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Approvals</h3>
+
+                <a href="http://approvaltests.com">Approval</a>
+                <a href="https://github.com/approvals">https://github.com/approvals</a>
+            </section>
+            <section>
+                <h3>Gilded-Rose</h3>
+
+                <h4>Emily Bache</h4>
+
+                <a href="https://github.com/emilyBache">https://github.com/emilyBache</a>
+                <img src="images/EmilyBache.jpeg" alt="Emily Bache" height="380">
+
+            </section>
+
+
+        </section>
+
+    </div>
+</div>
+
+
+<script src="../lib/js/head.min.js"></script>
+<script src="../js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+</script>
+</body>
+</html>
