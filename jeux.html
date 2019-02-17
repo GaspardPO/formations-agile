@@ -29,28 +29,18 @@
     <div class="slides">
 
         <section>
-          Jeux
+            <h1>Jeux</h1>
         </section>
 
         <section>
-            Coin Toss
+            <h2>Coin Toss</h2>
         </section>
 
         <section>
-            Marshmallow Challenge
-            <aside class="notes">
-                total : 30-40 minutes.<br>
-                18 minutes, un m de scotch, un m de ficelle, une poignée de spagetthis, un marshmallow
-            </aside>
-        </section>
-
-
-        <section>
-            Open-ended spec
+            <h2>Open-ended spec</h2>
             <aside class="notes">
                 une équipe déssine selon le but<br>
                 l'autre selon des specs très (trop) détaillées.<br>
-
                 Ou <br>
                 chaque équipe dessine selon le but, <br>
                 puis écrit des specs techniques hyper détaillées<br>
@@ -60,6 +50,7 @@
 
         <section>
             <h2>Offing the off-site customer</h2>
+            <h2>Dessinateurs et spécifieurs</h2>
             <a href="https://www.jamesshore.com/">The Art of Agile - James Shore</a>
             <aside class="notes">
                 10 minutes pour le client pour décrire sa vision au business analyst et écrire des specs.<br>
@@ -74,13 +65,126 @@
         </section>
 
         <section>
-            Elephant Carpaccio
-            <aside class="notes">
-                + code ?<br>
-                + test d'acceptances ?<br>
-            </aside>
+            <section>
+                <h2>Elephant Carpaccio</h2>
+                <img src="html/images/us/elephant-carpaccio.png"
+                     alt="elephant carpaccio" width="400">
+                <br>
+                <a href="https://docs.google.com/document/d/1TCuuu-8Mm14oxsOnlk8DqfZAA1cvtYu9WGv67Yj_sSk/pub">Henrik
+                    Kniberg & Alistair Cockburn</a>
+                <aside class="notes">
+                    + code ?<br>
+                    + test d'acceptances ?<br>
+                </aside>
+            </section>
+            <section>
+                <h3>Objectif : découper un projet en User-Stories.</h3>
+                <h3 class="fragment">Objectif 2 : prioriser ce backlog.</h3>
+                <h4 class="fragment">Objectif 3 : implémenter (coder !) les US.</h4>
+            </section>
+            <section>
+                <img src="html/images/us/us.png"
+                     alt="us" height="250">
+                <img class="fragment" src="html/images/us/us-slicing.png"
+                     alt="us slicing" height="250">
+            </section>
+            <section>
+                <img src="html/images/us/us-size-vs-time.png"
+                     alt="us value over time" height="400">
+                <p class="fragment">la décision de découper ou non l'US ne sera limité que par la possibilité de couper
+                    ou non l'US</p>
+            </section>
+            <section>
+                <h4>6 D</h4>
+                <ul>
+                    <li>Désirable</li>
+                    <li>Démontrable</li>
+                    <li>Découpée</li>
+                    <li>Dérisquée</li>
+                    <li>Définition de Fini</li>
+                    <li>Discutée (ou Débattue)</li>
+                </ul>
+                <aside class="notes">
+                    Elephant Carpaccio
+                </aside>
+            </section>
+            <section>
+                <h2>Retail calculator</h2>
+                <p>3 entrées : Prix unitaires, quantité, état.</p>
+                <p>1 sortie : Prix à payer.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>order value</td>
+                            <td>discount rate</td>
+                            <td>|</td>
+                            <td>State</td>
+                            <td>taxe rate</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$1,000</td>
+                            <td>3 %</td>
+                            <td>|</td>
+                            <td>UT</td>
+                            <td>6.85%</td>
+                        </tr>
+                        <tr>
+                            <td>$5,000</td>
+                            <td>5 %</td>
+                            <td>|</td>
+                            <td>NV</td>
+                            <td>8.00%</td>
+                        </tr>
+                        <tr>
+                            <td>$7,000</td>
+                            <td>7 %</td>
+                            <td>|</td>
+                            <td>TX</td>
+                            <td>6.25%</td>
+                        </tr>
+                        <tr>
+                            <td>$10,000</td>
+                            <td>10 %</td>
+                            <td>|</td>
+                            <td>AL</td>
+                            <td>4.00%</td>
+                        </tr>
+                        <tr>
+                            <td>$50,000</td>
+                            <td>15 %</td>
+                            <td>|</td>
+                            <td>CA</td>
+                            <td>8.25%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </section>
 
+        <section>
+            <section>
+                Marshmallow Challenge
+                <aside class="notes">
+                    total : 30-40 minutes.<br>
+                    18 minutes, un m de scotch, un m de ficelle, une poignée de spagetthis, un marshmallow
+                </aside>
+            </section>
+            <section>
+                <h2>Objectif</h2>
+                <p>Faire une construction pour mettre le Chamallow le plus haut possible</p>
+                <ul>
+                    <li class="fragment">1 chamallow</li>
+                    <li class="fragment">20 spaghettis</li>
+                    <li class="fragment">1m de ficelle</li>
+                    <li class="fragment">1m de scotch</li>
+                    <li class="fragment">18 minutes</li>
+                </ul>
+            </section>
+
+
+        </section>
 
         <section>
             Planning <br>
@@ -101,7 +205,7 @@
         <section>
             DSM
             <aside class="notes">
-               Dernier projet en cours<br>
+                Dernier projet en cours<br>
                 différentes approches : 3 questions / chrono / aléatoire / en suivant le Board ...<br>
                 scrum from hell
             </aside>
