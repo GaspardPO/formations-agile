@@ -85,18 +85,15 @@
                     <li>Pourquoi ?</li>
                     <li>Manifeste, principes, valeurs</li>
                     <li>Différentes démarches</li>
-                    <li>Specs, Backlog</li>
+                    <li>Specs, User-stories</li>
                     <li>Scrum : principes</li>
                     <li>Roles : PO, Devs, SM</li>
                     <li>DSM, Rétro, Planning, Revue</li>
+                    <!-- TODO  !! outils et entreprise-->
+                    <li>Outils, Board, Kanban</li>
+                    <li>Organisation, entreprise</li>
                     <li>Qualité, dette technique</li>
                     <li>eXtreme Programming : quelques pratiques</li>
-
-                    <!--
-
-                    <li>Board</li>
-                    -->
-
                 </ul>
 
                 <!--
@@ -908,40 +905,6 @@
             </section>
         <section>
             <section>
-                <h2>Backlogs</h2>
-                <img src="html/images/backlogs.png" alt="bac à sable, affinage, pret, en cours, fini" width="1000">
-            </section>
-            <section>
-                <h2>Bac à sable</h2>
-                <p>En vrac, les idées, les retours d'utilisation</p>
-            </section>
-            <section>
-                <h2>Bac d'affinage</h2>
-                <img src="html/images/bac-affinage.png" alt="affinage" width="300">
-                <p>De pas prioritaires, énormes</p>
-                <p>à découpées, détaillées, prioritaires, prètes à être développées pour le prochain sprint.</p>
-            </section>
-            <section>
-                <h2>Bac de départ</h2>
-                <p>Stories prètes à être développées, ordonnées par priorité, par valeur métier.</p>
-                <p>Pas la peine d'avoir plus de 2 sprints d'avance. (voir 1,5)</p>
-            </section>
-            <section>
-                <p>L'affinage, le découpage en US est une activité qui doit être faite très régulièrement, par l'équipe
-                    et le PO</p>
-                <p>L'équipe n'est pas forcément au complet (petits groupes).</p>
-                <p>Une solution peut être de planifier des meetings timeboxés pour ne pas oublier.</p>
-                <p>Le Scrum Guide dit : 10% du temps de l'équipe.</p>
-            </section>
-            <aside class="notes">
-                prévoir du temps.<br>
-                exemple : 10 minutes après chaque daily ?
-
-            </aside>
-        </section>
-
-        <section>
-            <section>
                 <h3>Scrum Team</h3>
                 <ul>
                     <li>Product Owner</li>
@@ -1166,7 +1129,7 @@
                 </aside>
             </section>
             <section>
-                <p>Scrum <b>Master</b></p>
+                <p>Scrum <b>MASTER</b></p>
 
                 <p>nécessite une bonne expérience en projet Agile : <br>
                     Acheter une certification ne suffit pas</p>
@@ -1192,43 +1155,7 @@
                 </aside>
             </section>
         </section>
-        <!-- DoD -->
-        <section>
-            <section>
-                <h2>Quand peut on dire qu'une tache est finie ?</h2>
 
-            </section>
-            <section>
-                <h2>Définition de Fini</h2>
-                <h2>DoD: Definition Of Done</h2>
-
-                <ul>
-                    <li>Indispensable</li>
-                    <li>Partagée</li>
-                    <li>Transparente</li>
-                    <li>Evolutive</li>
-                </ul>
-            </section>
-            <section>
-                <p>Crée par l'équipe de dev, en fonction des autres équipes de l'organisation</p>
-                <p>Si plusieurs équipes : les DoD doivent permettent de s'intégrer.</p>
-
-                <p>permet d'avoir un incréement utilisable<br>
-                    définit le niveau de qualité de l'équipe</p>
-                <p>à rediscuter à chaque rétro.</p>
-            </section>
-            <section>
-                <ul>
-                    <li>Les test fonctionnels passent</li>
-                    <li>pas de régression</li>
-                    <li>code relu</li>
-                    <li>doc écrite</li>
-                    <li>le code est déployé sur un environnement de pré-prod</li>
-                </ul>
-                <p>permet d'avoir un incréement utilisable<br>
-                    définit le niveau de qualité de l'équipe</p>
-            </section>
-        </section>
         <section>
             <section>
                 <h2>Scrum</h2>
@@ -1270,7 +1197,6 @@
                 <p>L'entrée est le backlog, et ce qui est choisi par l'équipe devient le <b>Sprint Backlog</b></p>
                 <p>Ce qui est livré en sortie de sprint peut être mis en production
                 <div class="fragment">dès le 1er sprint</div>
-                </p>
                 <aside class="notes">
                     fixe, mais peut évoluer.
                 </aside>
@@ -1308,16 +1234,265 @@
                 <p>Faites des pauses et aller vous coucher.</p>
             </section>
         </section>
+        <section>
+            <section>
+                <h2>Backlogs</h2>
+                <img src="html/images/backlogs.png" alt="bac à sable, affinage, pret, en cours, fini" width="1000">
+            </section>
+            <section>
+                <h2>Bac à sable</h2>
+                <p>En vrac, les idées, les retours d'utilisation</p>
+            </section>
+            <section>
+                <h2>Bac d'affinage</h2>
+                <img src="html/images/bac-affinage.png" alt="affinage" width="300">
+                <p>De pas prioritaires, énormes</p>
+                <p>à découpées, détaillées, prioritaires, prètes à être développées pour le prochain sprint.</p>
+            </section>
+            <section>
+                <h2>Bac de départ</h2>
+                <p>Stories prètes à être développées, ordonnées par priorité, par valeur métier.</p>
+                <p>Pas la peine d'avoir plus de 2 sprints d'avance. (voir 1,5)</p>
+            </section>
+            <section>
+                <h2>Backlog-grooming / Affinage</h2>
+                <p>L'affinage, le découpage en US est une activité qui doit être faite très régulièrement, par l'équipe
+                    et le PO</p>
+                <p>L'équipe n'est pas forcément au complet (petits groupes).</p>
+                <p>Une solution peut être de planifier des meetings timeboxés pour ne pas oublier.</p>
+                <p>Le Scrum Guide dit : 10% du temps de l'équipe.</p>
+            </section>
+            <aside class="notes">
+                prévoir du temps.<br>
+                exemple : 10 minutes après chaque daily ?
+
+            </aside>
+        </section>
+
+        <!-- planning ! -->
+        <section>
+            <section>
+                <h2>Sprint Planning</h2>
+                <img src="html/images/scrum-framework.png" alt="Scrum Framework" width="1400">
+            </section>
+            <section>
+                <p>Timeboxé : 2h / semaine</p>
+                <p>Backlog produit en entrée, backlog de sprint en sortie</p>
+                <p>Equipe de dev et PO</p>
+            </section>
+            <section>
+                <p>Le Backlog produit est ordonné par priorité par le PO</p>
+                <p>Le PO rappelle le contexte de release, l'équipe scrum fixe un but</p>
+                <p>L'équipe de dev prends des éléments selon cet ordre et elle seule décide leur nombre</p>
+                <p>Les 1ères US sont découpées en tâches techniques et on a un plan d'actions</p>
+                <br>
+                <p class="fragment">Les tâches sont estimées ?</p>
+            </section>
+            <section>
+                <p>Il est de la responsabilité de l'équipe d'accepter ou non d'autres US.<br>
+                    Et de prendre en compte le temps de se former, de nettoyer le code, de supprimer les bugs ...</p>
+            </section>
+
+            <section>
+                <p>Estimations en Point : suite de Fibbonacci<br>
+                    1, 2, 3, 5, 8, 12.</p>
+
+                <p>Estimations en taille de T-shirt <br>
+                    XS, S, M, L.</p>
+
+                <p>Et toujours : <br>
+                    ?<br>
+                    pause<br>
+                    trop grand</p>
+            </section>
+            <section>
+                <h4>Planning Poker</h4>
+                <p>On étalonne avec des US précédentes</p>
+                <ul>Pour chaque US,
+                    <li class="fragment">Chacun choisi secrètement une carte</li>
+                    <li class="fragment">On révèle en même temps</li>
+                    <li class="fragment">On discute pour régler les désacords et clarifier</li>
+                    <li class="fragment">On arrive à un consensus</li>
+                </ul>
+            </section>
+            <section>
+                <h4>Wall Planning</h4>
+                <p>On étalonne avec des US précédentes</p>
+                <p>On fait des colonnes par taille, <br>
+                    On place les US dans les colonnes.
+                </p>
+            </section>
+            <section>
+                <h4>eXtreme Quotation</h4>
+                <ul>
+                    <li class="fragment" data-fragment-index="1">On met toutes les US en vrac sur une table</li>
+                    <li class="fragment" data-fragment-index="2">Itération 1 : on les classe par colonne</li>
+                    <li class="fragment" data-fragment-index="2">Itération 1 : pas de discussion</li>
+                    <li class="fragment" data-fragment-index="3">Itération 2 : on inverse certaines cartes</li>
+                    <li class="fragment" data-fragment-index="3">Itération 2 : on note chaque mouvement</li>
+                    <li class="fragment" data-fragment-index="4">On discute des US à problèmes (celles qui ont bougé)
+                    </li>
+
+                </ul>
+            </section>
+            <section>
+                <h3>Les Estimations sont toujours fausses</h3>
+                <blockquote>L'intérêt des estimations n'est pas dans le chiffre farfelu qu'on obtient, mais dans la
+                    discussion.
+                </blockquote>
+            </section>
+            <section>
+                <p>Les Estimations ne sont utilisables que si le code est de qualité et que la vélocité de l'équipe est
+                    stable.</p>
+                <p>Bouger des post-its, "faire de l'agile" ne sert à rien avec du code de merde, des équipes mal
+                    formées et du turnover.</p>
+            </section>
+            <section>
+                <h3>NoEstimate</h3>
+                <p>Si on découpe en suffisamment petit et qu'on a des grandes quantité d'US, on considère que les US
+                    font
+                    toutes la même taille</p>
+                <p>On fait alors de la statistique.</p>
+            </section>
+            <section>
+                <p>Plus les US sont petites, moins l'erreur d'estimations est grave.</p>
+            </section>
+        </section>
+        <!-- DSM ! -->
+        <section>
+            <section>
+                <h2>Daily Stand-up Meeting</h2>
+                <img src="html/images/scrum-framework.png" alt="Scrum Framework" width="1400">
+                <p class="fragment">Vous en faites ? Pourquoi ? comment ?</p>
+                <p class="fragment">Et vous avez des problèmes ?</p>
+            </section>
+            <section>
+                <p>Timeboxé : 15 minutes max.</p>
+                <p class="fragment">Pour l'équipe de Dev.
+                <p>
+                <p class="fragment">Pour parler de l'avancement du sprint et s'organiser dans l'équipe.</p>
+                <p class="fragment">Debout, sans PC.</p>
+            </section>
+            <section>
+                <p>Par les Devs, pour les Devs.</p>
+                <p class="fragment">C'est uniquement pour l'équipe de Dev. Le PO ou d'autres peut y assister, mais ne
+                    participent pas.</p>
+                <p class="fragment">Le Scrum Master aide l'équipe à faire le DSM, mais ne participe pas.</p>
+                <p class="fragment">Il ne s'agit pas de faire du reporting à une personne, mais de s'organiser dans
+                    l'équipe.</p>
+            </section>
+            <section>
+                <ul>
+                    <li class="fragment">être au courant</li>
+                    <li class="fragment">mettre au courant</li>
+                    <li class="fragment">demander de l'aide</li>
+                    <li class="fragment">proposer de l'aide</li>
+                    <li class="fragment">organiser la journée</li>
+                    <li class="fragment">lancer la journée</li>
+                    <li class="fragment">être transparent sur l'avancement</li>
+                </ul>
+            </section>
+            <section>
+                <h4>Par personne</h4>
+                <p>Qu'ai je fait hier pour réaliser l'objectif du sprint ?</p>
+                <p>Que vais je faire aujourd'hui pour réaliser l'objectif du sprint ?</p>
+                <p>Ai-je un problème ?</p>
+            </section>
+            <section>
+                <h4>Par US</h4>
+                <p>Où en est on ?</p>
+                <p>Que reste il à faire pour finir ?</p>
+                <p>A t'on des blocages ?</p>
+                <p>Comment s'organise t'on pour la finir ?</p>
+                <br>
+                <p class="fragment">Commencer par les plus proches de la fin et les plus prioritaires</p>
+            </section>
+            <section>
+                <h3>Equipe autonome, auto-organisé et sans hierarchie</h3>
+                <p>Ce n'est pas du reporting au PO, au SM, à un Lead Dev.</p>
+                <p class="fragment">C'est un travail d'équipe : si quelqu'un parle d'un problème, alors c'est le
+                    problème de toute l'équipe</p>
+                <p class="fragment">Le Scrum Master peut aider, mais n'est pas indispensable</p>
+            </section>
+            <section>
+                <p>15 minutes maximum<br>
+                    Ne pas traiter les problèmes, mais les noter.<br>
+                    Boite à meuh<br>
+                    bloquer à 15 minutes<br>
+                </p>
+                <p class="fragment">Debout ! Sans PC.</p>
+                <p class="fragment">Différencier fini / fait.</p>
+                <p class="fragment">Parler en US, pas front/back.</p>
+                <p class="fragment">Aléatoire</p>
+                <p class="fragment">Minute de silence</p>
+                <p class="fragment">Faire tourner l'animation, ne pas avoir de Scrum Master</p>
+            </section>
+
+
+        </section>
+
+        <section>
+            <section>
+                <h3>Démo - Revue</h3>
+                <img src="html/images/scrum-framework.png" alt="Scrum Framework" width="1400">
+            </section>
+            <section>
+                <p>Timeboxé : 1h</p>
+                <p>On montre ce qu'on a produit et on a un feedback</p>
+                <p>Equipe Scrum, et on invite tous ceux qui sont concernés</p>
+            </section>
+            <section>
+                <p>On invite plein de monde </p>
+                <ul>
+                    <li class="fragment">Les gens qui paient le produit</li>
+                    <li class="fragment">Les gens qui utilisent le produit</li>
+                    <li class="fragment">Les gens qui exploitent le produit</li>
+                    <li class="fragment">N'importe qui intéressé par le produit</li>
+                    <li class="fragment">N'importe qui intéressé par l'agilité et l'équipe</li>
+                    <li class="fragment">...</li>
+                </ul>
+            </section>
+            <section>
+                <p>L'équipe n'est pas jugée, ce n'est pas un tribunal<br>
+                    On parle du produit uniquement.
+                </p>
+            </section>
+            <section>
+                <ul>Deux phases
+                    <li>On présente les US finies</li>
+                    <li>On recueille des feedbacks</li>
+                </ul>
+            </section>
+            <section>
+                <p>La démonstration du produit se prépare en avance.<br>
+                    Il faut un scénario qui reprend les tests d'acceptances (cas nominaux)</p>
+                <p class="fragment">On ne présente que les US finies</p>
+            </section>
+            <section>
+                <p>Le recueil des feedbacks d'usages permettent d'alimenter le backlog pour les sprints futurs.</p>
+                <p class="fragment">Donc on n'oublie pas de les noter !</p>
+            </section>
+            <section>
+                <p>Ne négligez pas les revues : c'est très bon pour le moral.</p>
+                <p>On présente ce qu'on a produit, donc on se rend compte qu'on a avancé.</p>
+                <p>On rencontre des utilisateurs, qui sont (généralement) contents, donc ça fait plaisir et c'est bon
+                    pour le moral.</p>
+            </section>
+        </section>
         <!-- retro ! -->
         <section>
             <section>
                 <h2>Retro</h2>
+                <img src="html/images/scrum-framework.png" alt="Scrum Framework" width="1400">
                 <p class="fragment">Vous en faites ? Pourquoi ? comment ?</p>
             </section>
             <section>
                 <h2>Retro</h2>
                 <p>L'évènement le plus important de l'agilité, le seul indispensable.</p>
                 <p class="fragment"> But : faire le point sur la façon de travailler.</p>
+                <p class="fragment"> 2 boucles de feedback :<br>
+                Revue : sur le produit<br>
+                Retro : sur les méthodes</p>
             </section>
             <section>
                 <p>Timeboxé : environ 45min à 1h / semaine de sprint.</p>
@@ -1386,211 +1561,52 @@
                 <p class="fragment">Ne repoussez pas les rétros, faites les.</p>
             </section>
             <!-- TODO : Exemple : speed boat. -->
-
-        </section>
-        <!-- DSM ! -->
-        <section>
-            <section>
-                <h2>Daily Stand-up Meeting</h2>
-                <p class="fragment">Vous en faites ? Pourquoi ? comment ?</p>
-                <p class="fragment">Et vous avez des problèmes ?</p>
-            </section>
-            <section>
-                <p>Timeboxé : 15 minutes max.</p>
-                <p class="fragment">Pour l'équipe de Dev.
-                <p>
-                <p class="fragment">Pour parler de l'avancement du sprint et s'organiser dans l'équipe.</p>
-                <p class="fragment">Debout, sans PC.</p>
-            </section>
-            <section>
-                <p>Par les Devs, pour les Devs.</p>
-                <p class="fragment">C'est uniquement pour l'équipe de Dev. Le PO ou d'autres peut y assister, mais ne
-                    participent pas.</p>
-                <p class="fragment">Le Scrum Master aide l'équipe à faire le DSM, mais ne participe pas.</p>
-                <p class="fragment">Il ne s'agit pas de faire du reporting à une personne, mais de s'organiser dans
-                    l'équipe.</p>
-            </section>
-            <section>
-                <ul>
-                    <li class="fragment">être au courant</li>
-                    <li class="fragment">mettre au courant</li>
-                    <li class="fragment">demander de l'aide</li>
-                    <li class="fragment">proposer de l'aide</li>
-                    <li class="fragment">organiser la journée</li>
-                    <li class="fragment">lancer la journée</li>
-                    <li class="fragment">être transparent sur l'avancement</li>
-                </ul>
-            </section>
-            <section>
-                <h4>Par personne</h4>
-                <p>Qu'ai je fait hier pour réaliser l'objectif du sprint ?</p>
-                <p>Que vais je faire aujourd'hui pour réaliser l'objectif du sprint ?</p>
-                <p>Ai-je un problème ?</p>
-            </section>
-            <section>
-                <h4>Par US</h4>
-                <p>Où en est on ?</p>
-                <p>Que reste il à faire pour finir ?</p>
-                <p>A t'on des blocages ?</p>
-                <p>Comment s'organise t'on pour la finir ?</p>
-                <br>
-                <p class="fragment">Commencer par les plus proches de la fin et les plus prioritaires</p>
-            </section>
-            <section>
-                <h3>Equipe autonome, auto-organisé et sans hierarchie</h3>
-                <p>Ce n'est pas du reporting au PO, au SM, à un Lead Dev.</p>
-                <p class="fragment">C'est un travail d'équipe : si quelqu'un parle d'un problème, alors c'est le
-                    problème de toute l'équipe</p>
-                <p class="fragment">Le Scrum Master peut aider, mais n'est pas indispensable</p>
-            </section>
-            <section>
-                <p>15 minutes maximum<br>
-                    Ne pas traiter les problèmes, mais les noter.<br>
-                    Boite à meuh<br>
-                    bloquer à 15 minutes<br>
-                </p>
-                <p class="fragment">Debout ! Sans PC.</p>
-                <p class="fragment">Différencier fini / fait.</p>
-                <p class="fragment">Parler en US, pas front/back.</p>
-                <p class="fragment">Aléatoire</p>
-                <p class="fragment">Minute de silence</p>
-                <p class="fragment">Faire tourner l'animation, ne pas avoir de Scrum Master</p>
-            </section>
-
-
-        </section>
-        <!-- planning ! -->
-        <section>
-            <section>
-                <h2>Sprint Planning</h2>
-            </section>
-            <section>
-                <p>Timeboxé : 2h / semaine</p>
-                <p>Backlog produit en entrée, backlog de sprint en sortie</p>
-                <p>Equipe de dev et PO</p>
-            </section>
-            <section>
-                <p>Le Backlog produit est ordonné par priorité par le PO</p>
-                <p>Le PO rappelle le contexte de release, l'équipe scrum fixe un but</p>
-                <p>L'équipe de dev prends des éléments selon cet ordre et elle seule décide leur nombre</p>
-                <p>Les 1ères US sont découpées en tâches techniques et on a un plan d'actions</p>
-                <br>
-                <p class="fragment">Les tâches sont estimées ?</p>
-            </section>
-            <section>
-                <p>Il est de la responsabilité de l'équipe d'accepter ou non d'autres US.<br>
-                    Et de prendre en compte le temps de se former, de nettoyer le code, de supprimer les bugs ...</p>
-            </section>
-            <section>
-                <p>Estimations en Point : suite de Fibbonacci<br>
-                    1, 2, 3, 5, 8, 12.</p>
-
-                <p>Estimations en taille de T-shirt <br>
-                    XS, S, M, L.</p>
-
-                <p>Et toujours : <br>
-                    ?<br>
-                    pause<br>
-                    trop grand</p>
-            </section>
-            <section>
-                <h4>Planning Poker</h4>
-                <p>On étalonne avec des US précédentes</p>
-                <ul>Pour chaque US,
-                    <li class="fragment">Chacun choisi secrètement une carte</li>
-                    <li class="fragment">On révèle en même temps</li>
-                    <li class="fragment">On discute pour régler les désacords et clarifier</li>
-                    <li class="fragment">On arrive à un consensus</li>
-                </ul>
-            </section>
-            <section>
-                <h4>Wall Planning</h4>
-                <p>On étalonne avec des US précédentes</p>
-                <p>On fait des colonnes par taille, <br>
-                    On place les US dans les colonnes.
-                </p>
-            </section>
-            <section>
-                <h4>eXtreme Quotation</h4>
-                <ul>
-                    <li class="fragment" data-fragment-index="1">On met toutes les US en vrac sur une table</li>
-                    <li class="fragment" data-fragment-index="2">Itération 1 : on les classe par colonne</li>
-                    <li class="fragment" data-fragment-index="2">Itération 1 : pas de discussion</li>
-                    <li class="fragment" data-fragment-index="3">Itération 2 : on inverse certaines cartes</li>
-                    <li class="fragment" data-fragment-index="3">Itération 2 : on note chaque mouvement</li>
-                    <li class="fragment" data-fragment-index="4">On discute des US à problèmes (celles qui ont bougé)
-                    </li>
-
-                </ul>
-            </section>
-            <section>
-                <h3>Les Estimations sont toujours fausses</h3>
-                <blockquote>L'intérêt des estimations n'est pas dans le chiffre farfelu qu'on obtient, mais dans la
-                    discussion.
-                </blockquote>
-            </section>
-            <section>
-                <p>Les Estimations ne sont utilisables que si le code est de qualité et que la vélocité de l'équipe est
-                    stable.</p>
-                <p>Bouger des post-its, "faire de l'agile" ne sert à rien avec du code de merde, des équipes mal
-                    formées et du turnover.</p>
-            </section>
-            <section>
-                <h3>NoEstimate</h3>
-                <p>Si on découpe en suffisamment petit et qu'on a des grandes quantité d'US, on considère que les US
-                    font
-                    toutes la même taille</p>
-                <p>On fait alors de la statistique.</p>
-            </section>
-            <section>
-                <p>Plus les US sont petites, moins l'erreur d'estimations est grave.</p>
-            </section>
         </section>
         <section>
             <section>
-                <h3>Démo - Revue</h3>
+                <h2>Et les Scrum-masters dans tout ça ?</h2>
+                <p class="fragment">Jamais indispensables.</p>
+                <p class="fragment">Ils peuvent aider à faciliter, à animer.</p>
+                <p class="fragment">Les évènements ne tournent pas autour d'eux, ils sont pour l'équipe.</p>
+                <p class="fragment">Si la réunion se focalise sur le SM, ne pas hésiter à faire la prochaine sans lui !</p>
+            </section>
+        </section>
+
+        <!-- DoD -->
+        <section>
+            <section>
+                <h2>Quand peut on dire qu'une tache est finie ?</h2>
+
             </section>
             <section>
-                <p>Timeboxé : 1h</p>
-                <p>On montre ce qu'on a produit et on a un feedback</p>
-                <p>Equipe Scrum, et on invite tous ceux qui sont concernés</p>
-            </section>
-            <section>
-                <p>On invite plein de monde </p>
+                <h2>Définition de Fini</h2>
+                <h2>DoD: Definition Of Done</h2>
+
                 <ul>
-                    <li class="fragment">Les gens qui paient le produit</li>
-                    <li class="fragment">Les gens qui utilisent le produit</li>
-                    <li class="fragment">Les gens qui exploitent le produit</li>
-                    <li class="fragment">N'importe qui intéressé par le produit</li>
-                    <li class="fragment">N'importe qui intéressé par l'agilité et l'équipe</li>
-                    <li class="fragment">...</li>
+                    <li>Indispensable</li>
+                    <li>Partagée</li>
+                    <li>Transparente</li>
+                    <li>Evolutive</li>
                 </ul>
             </section>
             <section>
-                <p>L'équipe n'est pas jugé, ce n'est pas un tribunal<br>
-                    On parle du produit uniquement.
-                </p>
+                <p>Crée par l'équipe de dev, en fonction des autres équipes de l'organisation</p>
+                <p>Si plusieurs équipes : les DoD doivent permettent de s'intégrer.</p>
+
+                <p>permet d'avoir un incréement utilisable<br>
+                    définit le niveau de qualité de l'équipe</p>
+                <p>à rediscuter à chaque rétro.</p>
             </section>
             <section>
-                <ul>Deux phases
-                    <li>On présente les US finies</li>
-                    <li>On recueille des feedbacks</li>
+                <ul>
+                    <li>Les test fonctionnels passent</li>
+                    <li>pas de régression</li>
+                    <li>code relu</li>
+                    <li>doc écrite</li>
+                    <li>le code est déployé sur un environnement de pré-prod</li>
                 </ul>
-            </section>
-            <section>
-                <p>La démonstration du produit se prépare en avance.<br>
-                    Il faut un scénario qui reprend les tests d'acceptances (cas nominaux)</p>
-                <p class="fragment">On ne présente que les US finies</p>
-            </section>
-            <section>
-                <p>Le recueil des feedbacks d'usages permettent d'alimenter le backlog pour les sprints futurs.</p>
-                <p class="fragment">Donc on n'oublie pas de les noter !</p>
-            </section>
-            <section>
-                <p>Ne négligez pas les revues : c'est très bon pour le moral.</p>
-                <p>On présente ce qu'on a produit, donc on se rend compte qu'on a avancé.</p>
-                <p>On rencontre des utilisateurs, qui sont (généralement) contents, donc ça fait plaisir et c'est bon
-                    pour le moral.</p>
+                <p>permet d'avoir un incréement utilisable<br>
+                    définit le niveau de qualité de l'équipe</p>
             </section>
         </section>
 
