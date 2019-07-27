@@ -1023,6 +1023,11 @@
                 <p>Cross-fonctionnelle et autonome = <br>
                     tout le monde ne sait pas tout faire, mais tous ensemble, on peut tout faire.<br>
                     Sans avoir besoin de demander de l'aide extérieure.</p>
+
+                <p class="fragment">Autonome = l'équipe peut déployer quand elle veut.</p>
+                <aside class="notes">
+                    Autonome : si l'équipe déploie quand elle veut, elle n'est pas dépendante des autres, donc petit projets.
+                </aside>
             </section>
             <section>
                 <h4>QA, Test, Qualité</h4>
@@ -1049,12 +1054,17 @@
                 <p class="fragment">Recrutement ?</p>
                 <p class="fragment">Congés, absences ?</p>
                 <p class="fragment">Paie, primes ?</p>
+
+                <aside class="notes">
+                    Primes : General Electric
+                </aside>
+
             </section>
-            <section>
+<!-- TODO : "prenez le pouvoir à reformuler"            <section>
                 <h4>Devs, votre boulot n'est pas uniquement d'écrire du code.<br>
                     Sortez vous les doigts du cul, <br>
                     Prenez des responsabilités et le pouvoir.</h4>
-            </section>
+            </section>-->
             <section>
                 <p>Rappel : c'est vraiment l'équipe qui se gère et qui décide.<br>
                     Les gens qui ne produisent pas ne donnent pas de consignes sur la façon de produire.</p>
@@ -1257,7 +1267,7 @@
                 <p>Pas la peine d'avoir plus de 2 sprints d'avance. (voir 1,5)</p>
             </section>
             <section>
-                <h2>Backlog-grooming / Affinage</h2>
+                <h2>Backlog-refinment / Affinage</h2>
                 <p>L'affinage, le découpage en US est une activité qui doit être faite très régulièrement, par l'équipe
                     et le PO</p>
                 <p>L'équipe n'est pas forcément au complet (petits groupes).</p>
@@ -1550,7 +1560,9 @@
                     <li class="fragment">Vote uninominal</li>
                     <li class="fragment">Dot Voting</li>
                     <li class="fragment">Vote par note</li>
+                    <li class="fragment">Vote de Condorcet / classement </li>
                     <li class="fragment">Classement difficulté / valeur</li>
+                    <li class="fragment">Tirage au sort</li>
                     <li class="fragment">...</li>
                 </ul>
             </section>
@@ -2291,6 +2303,83 @@
                 Joel Test
         -->
 
+
+        <section>
+            <section>
+                <h2>Kanban</h2>
+                <ul>
+                    <li>Visualiser le Flux</li>
+                    <li>Limiter le travail en cours (WIP : Work in Progress)</li>
+                    <li>Réduire le Lead-Time</li>
+                </ul>
+            </section>
+            <section>
+                <img src="images/kanban/lead-time.jpeg" alt="leadt-ime" height="420">
+            </section>
+            <section>
+                <p>Du Scrum sans itération ?</p>
+                <p>Bien pour de la TMA</p>
+            </section>
+            <section>
+                <h3>Transition Kanban</h3>
+                <img src="images/kanban/1-observer.png" alt="observer" height="420">
+            </section>
+            <section>
+                <h3>Transition Kanban</h3>
+                <img src="images/kanban/2-observer.png" alt="observer" height="420">
+            </section>
+
+            <section>
+                <h3>Transition Kanban</h3>
+                <img src="images/kanban/3-elements-placé.png" alt="elements placés" height="420">
+            </section>
+            <section>
+                <h3>Transition Kanban</h3>
+                <img src="images/kanban/4-placement-réel.png" alt="réel" height="420">
+            </section>
+            <section>
+                <h3>Transition Kanban</h3>
+                <img src="images/kanban/5-attendre.png" alt="attendre" height="420">
+            </section>
+            <section>
+                <h3>Transition Kanban</h3>
+                <img src="images/kanban/6-responsable.png" alt="responsables" height="420">
+            </section>
+            <section>
+                <h3>Transition Kanban</h3>
+                <img src="images/kanban/7-DoD.png" alt="DoD" height="420">
+            </section>
+            <section>
+                <h3>Transition Kanban</h3>
+                <img src="images/kanban/8-problèmes.png" alt="problemes" height="420">
+            </section>
+            <section>
+                <h3>Transition Kanban</h3>
+                <img src="images/kanban/9-cause.png" alt="causes" height="420">
+            </section>
+            <section>
+                <h3>Transition Kanban</h3>
+                <img src="images/kanban/10-pull.png" alt="Pull" height="420">
+            </section>
+            <section>
+                <h3>Transition Kanban</h3>
+                <img src="images/kanban/11-Pull.png" alt="pull" height="420">
+            </section>
+            <section>
+                <h3>Transition Kanban</h3>
+                <img src="images/kanban/12-problème.png" alt="probleme" height="420">
+            </section>
+            <section>
+                <h3>Transition Kanban</h3>
+                <img src="images/kanban/13-cause.png" alt="cause" height="420">
+            </section>
+            <section>
+                <p>WIP</p>
+                <p>Lead-Time</p>
+                <p>Pull</p>
+            </section>
+        </section>
+
         <section>
             <section>
                 <h2>Scaling ?</h2>
@@ -2299,9 +2388,14 @@
             <section><p>Comment sortir un logiciel qui apporte de la valeur en une semaine avec 200 personnes ?</p>
             </section>
             <section>
-                <p>L'agilité, c'est faire des tout petits projets rapides.</p>
+                <h3>Scale Up</h3> plutôt que <h3>Scale Out</h3>
+                <p class="fragment">L'agilité, c'est faire des tout petits projets rapides.</p>
                 <p class="fragment">Mais il faut que les équipes gardent une vision d'ensemble à long terme</p>
                 <blockquote class="fragment">Think global, act local</blockquote>
+                <aside class="notes">
+                    Scale Up : augmenter le nombre de projets, de services, <br>
+                    plutôt que scale out : faire grossir un projet
+                </aside>
             </section>
             <section>
                 <h2>Nombre de Dunbar</h2>
@@ -2327,7 +2421,8 @@
                 <p class="fragment">Pas le scrum master (sauf s'il fait aussi du dev).</p>
                 <aside class="notes">
                     Pas le SM !<br>
-                    On tourne, pas toujours le même
+                    On tourne, pas toujours le même<br>
+                    <p>Les questions sont aux niveau de l'équipe : qu'à fait l'équipe</p>
                 </aside>
             </section>
             <section>
@@ -2354,15 +2449,8 @@
             </section>
             <section>
                 <h2>7 levels of delegation</h2>
-                <ul>
-                    <li class="fragment">Tell</li>
-                    <li class="fragment">Sell</li>
-                    <li class="fragment">Consult</li>
-                    <li class="fragment">Agree</li>
-                    <li class="fragment">Advise</li>
-                    <li class="fragment">Inquire</li>
-                    <li class="fragment">Delegate</li>
-                </ul>
+               <img src="images/delegation-poker-cards-4-1024x768.jpg" alt="Tell, Sell, Consult, Agree, Advise, Inquire, Delegate" height="480">
+
                 <aside class="notes">
                     Tell : je choisi<br>
                     Sell : je choisi, mais j'explique pourquoi<br>
