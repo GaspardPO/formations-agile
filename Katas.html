@@ -16,17 +16,45 @@
 
     <!-- Printing and PDF exports -->
     <script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
 
     </script>
 </head>
 <body>
 <div class="reveal">
     <div class="slides">
+        <section>
+            <h1>Code-Retreat</h1>
+            <p>
+                <small>Gaspard POINTEAU<br><a href="http://twitter.com/Gaspard_PO">@Gaspard_PO</a></small>
+            </p>
+        </section>
+
+        <section>
+            <section>
+                <h4>Fonctionnement Pratique</h4>
+
+                <ul>
+                    <li>9h - 18h</li>
+                    <li>Pauses !</li>
+                    <li>Basé sur du code retreat et de la pratique</li>
+                    <li>Binomes ou Mob</li>
+                    <li>Pas obligé de finir</li>
+                </ul>
+                <aside class="notes">
+                    needs some rest 15 days = 2 weeks ? 3 ? <br>
+                    j'y connais rien à l'informatique, c'est vous qui allez faire la formation.<br>
+                    Plein d'exos possibles, on ne va pas tout faire. <br>
+                    Pas obligé de finir chaque exo.
+                </aside>
+            </section>
+        </section>
+
+
         <section>
             <h2>
                 Code Retreat
@@ -65,11 +93,14 @@
                 <p class="fragment"> dans le monde entier</p>
 
                 <div class="fragment">
-                    <p>16 Novembre 2019</p>
-                    <a href="https://www.coderetreat.org/">https://www.coderetreat.org/</a>
+                    <p> Octobre - Novembre ?</p>
+                    <a href="https://www.coderetreat.org/">https://www.coderetreat.org/</a><br>
+                    <a href="https://www.meetup.com/fr-FR/CodeRetreat-Paris/">https://www.meetup.com/fr-FR/CodeRetreat-Paris/</a>
                 </div>
 
                 <aside class="notes">
+                    pour l'instant, pas de lieu à Paris,
+                    voir avec Arola ? le meetup Softare crafter ?
                 </aside>
             </section>
         </section>
@@ -97,17 +128,530 @@
         </section>
 
         <section>
-            <h2>4 rules of Simple design</h2>
-            <img src="images/4rules.png" alt="4 rules">
+            <h2>TDD</h2>
+            <section>
+                <img src="images/tdd_flow.gif" alt="red green refactor" height="550">
+            </section>
+            <section>
+                <h4>Red</h4>
 
-            <p>Kent Beck</p>
+                <p>Quel est le test à écrire pour faire la plus petite étape ?</p>
+                <p>Commencer par fail : tester le test</p>
+                <aside class="notes">
+                    Tester le test : éviter les faux positifs.
+                </aside>
+            </section>
+            <section>
+                <h4>Green</h4>
+
+                <p>Quel est la plus petite étape à faire pour faire passer le test ?</p>
+
+                <aside class="notes">
+                    Bête et méchant : simplicité.
+                    Pas d'optimisation préature.
+                    YAGNI !
+                </aside>
+            </section>
+
+            <section>
+                <h4>Refactor</h4>
+
+                <p>On nettoie</p>
+                <p>On fait apparaître des concepts métiers</p>
+            </section>
+            <section>
+                <img src="images/test_in_5_steps.jpg" alt="test creation order" height="500">
+                <aside class="notes">
+                    /!\ dans certains langages il faut "Test" plutot que "Should"
+                </aside>
+            </section>
+
+            <section>
+                <h4 class="fragment current-visible">Test driven development ?</h4>
+                <h4 class="fragment">Test driven design ?</h4>
+                <p class="fragment">l'objectif n'est pas les tests, c'est le design !<br>
+                    le batterie de tests n'est qu'un effet de bord en cadeau</p>
+            </section>
+            <section>
+                <h3>Focus sur le besoin !</h3>
+                <p>oblige à réfléchir à ce que je veux en sortie<br>
+                    ce dont j'ai besoin en entrée<br>
+                    avant de faire la prod</p>
+            </section>
+            <section>
+                <h3>Avantages</h3>
+                <ul>
+                    <li class="fragment">écrit les specs en même temps que les tests</li>
+                    <li class="fragment">plein de tests pour la non-regression</li>
+                    <li class="fragment">oblige à définir le besoin avant de coder</li>
+                    <li class="fragment">code testable == code modulaire</li>
+                    <li class="fragment">YAGNI : on évite d'écrire du code inutile</li>
+                    <li class="fragment">gain de temps : pas de débuggueur, ni de logs</li>
+                </ul>
+
+                <aside class="notes">
+                    modulaire : si on passe un mock à la place d'une BDD, ça veut dire qu'on peut passer n'importe
+                    quelle bdd
+                </aside>
+            </section>
         </section>
+
+
+        <section>
+            <section>
+                <h3>Qualité</h3>
+                La qualité d'aujourd'hui est la vélocité de demain.
+            </section>
+
+            <section>
+                <h2>TL; DR : 4 rules of Simple design</h2>
+                <img src="images/4rules.png" alt="4 rules">
+                <p>Kent Beck</p>
+                <aside class="notes">
+                    duplication de connaissances métier.
+                </aside>
+            </section>
+            <section>
+                <h2>TL; DR 2:</h2>
+
+                <img src="images/qualité.jpg" alt="qualité">
+
+                <p>Les autres outils sont des indicateurs, mais en aucun cas des mesures fiables, et encore moins des
+                    objectifs.</p>
+
+                <aside class="notes">
+                    Outils ? Sonar ? warnings IDE ?
+                    Complexité ?
+
+                    ce sont des outils de mesures, mais en aucun cas des objectifs
+                    on a vite fait à se focaliser sur le pourcentage de tests plutôt que leur utilité.
+                </aside>
+            </section>
+
+            <section>
+                <h4> La dette technique est un choix.</h4>
+
+                <p>
+                    C'est un emprunt qu'il faudra rembourser, avec des intérets.
+                </p>
+
+                <blockquote class="fragment">
+                    Valide pour certains projets "one shot" : <br>
+                    un petit script pour trier un tas de données, un spike pour essayer une techno ...<br>
+                    Mais la plupart du temps les one-shots sont maintenus pendant des années.
+                </blockquote>
+
+                <h4 class="fragment">
+                    later is never
+                </h4>
+                <aside class="notes">
+                    Coder vite, sans tests, sans se former ... peut permettre de gagner un peu de temps, mais il faudra
+                    le rembourser plus tard. <br>
+                    Bien insister : si un manager demande de baisser la qualité, lui demander quand on remboursera.
+                    Parler en terme de dette et d'intérêts. <br>
+                </aside>
+            </section>
+
+
+            <section>
+                <h3>Clean-Code</h3>
+                <img src="images/cleancode.jpg" alt="cleancode">
+                <p>Robert C. Martin aka Uncle Bob</p>
+            </section>
+            <section>
+                <h3>Clean-Code</h3>
+                <blockquote>
+                    "Any fool can write code that a computer can understand.
+                    Good programmers write code that humans can understand."<br>
+                    Martin Fowler
+                </blockquote>
+                <blockquote>
+                    "Mal nommer les choses, c'est ajouter au malheur du monde !"<br>
+                    Albert Camus
+                </blockquote>
+                <blockquote>
+                    "There are only two hard things in Computer Science:<br>
+                    - cache invalidation,<br>
+                    - naming things"
+                    Phil Karlton<br>
+                </blockquote>
+            </section>
+
+            <section>
+                <h4>Utilisez du vocabulaire métier</h4>
+
+                <pre><code data-trim="java">
+    public List&lt;int[]&gt; getFlg() {
+      List&lt;int[]&gt; list1 = new ArrayList&lt;int[]&gt;();
+      for (int[] x : theList ) {
+        if (x[0] == 4)
+          list1.add(x);
+      }
+
+      return list1;
+    }
+                        </code></pre>
+
+
+                <pre class="fragment"><code data-trim class="java">
+    public List&lt;Cell&gt; getFlaggedCells() {
+      List&lt;Cell&gt; flaggedCells = new ArrayList&lt;Cell&gt;();
+      for (Cell cell : gameBoard ) {
+        if (cell.isFlagged())
+          flaggedCells.add(cell);
+      }
+
+      return flaggedCells;
+    }
+                        </code></pre>
+
+                <aside class="notes">
+                    Parlez au business !
+                    en théorie, un PO ou un utilisateur devrait pouvoir lire votre code.<br>
+                    Ou au moins les tests et titres de fonctions.<br>
+                    Bonus : en parlant au business, vous comprendrez vraiment le problème métier.<br>
+                    BABEL
+                </aside>
+            </section>
+            <section>
+                <h4>Séparez les niveaux d'abstraction</h4>
+
+                <pre><code data-trim="java">
+    public RGBColor readCurrentColor(BlinkLed led) {
+        device.sendCommand(new ReadColorRequest(led));
+
+        byte[] response = device.readResponse();
+
+        int red = response[2] >= 0 ? response[2] : response[2] + 256;
+        int green = response[3] >= 0 ? response[3] : response[3] + 256;
+        int blue = response[4] >= 0 ? response[4] : response[4] + 256;
+        return new RGBColor(red, green, blue);
+    }
+                        </code></pre>
+                <pre class="fragment"><code data-trim class="java">
+    public RGBColor readCurrentColor(BlinkLed led) {
+        device.sendCommand(new ReadColorRequest(led));
+        byte[] response = device.readResponse();
+        return extractColor(response);
+    }
+    private RGBColor extractColor(byte[] response) {
+        int red = convertToPositiveInt(response[2]);
+        int green = convertToPositiveInt(response[3]);
+        int blue = convertToPositiveInt(response[4]);
+        return new RGBColor(red, green, blue);
+    }
+    private int convertToPositiveInt(byte byt) {
+        return byt >= 0 ? byt : byt + 256;
+    }
+    </code></pre>
+
+                <aside class="notes">
+
+                </aside>
+            </section>
+
+            <section>
+                <h4>Séparez les niveaux d'abstraction</h4>
+
+                <ul>
+                    <li>Extract Method</li>
+                    <li>Extract Variables</li>
+                    <li>Extract Field</li>
+                    <li>Donner des noms parlants</li>
+                    <li>Une seule fonctionnalité par méthode</li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>Commentaires</h4>
+
+                <img src="images/comment.jpg" alt="Comments">
+            </section>
+            <section>
+                <h4>Commentaires</h4>
+
+                <img src="images/comment2.jpg" alt="Comments">
+            </section>
+
+            <section>
+                <h4>Inutiles ou Faux</h4>
+
+                <pre><code data-trim class="java">
+    /*
+    * A comment to please checkstyle
+    */</code></pre>
+                <pre><code data-trim>
+    /*
+    * Set the port
+    *
+    * @params port
+    */
+    public void setPort(Port port) {this.port=port}
+    </code></pre>
+                <pre><code data-trim>
+    ...
+            } /* end for */
+            dao.flush();
+          default :
+            break;
+          } /* end switch */
+        } /* end if */
+      } /* end if */
+    } catch ...
+    </code></pre>
+                <aside class="notes">
+                    évidemment, il y a en d'autres, des pas à jours, des faux, des inutiles.<br>
+                    et le code commenté (mort), c'est pas comme si on avait des systèmes de gestion de version pour ça.
+
+                </aside>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Soit obsolètes et faux</li>
+                    <li>Soit redondant et inutiles</li>
+                </ul>
+                <br>
+                <div class="fragment"><p>Exceptions:</p>
+                    <ul>
+                        <li>Public API</li>
+                        <li>Interface</li>
+                    </ul>
+                </div>
+
+                <br>
+                <div class="fragment">
+                    <ul>
+                        <li>Les Test expliquent le Quoi</li>
+                        <li>Le Code explique le comment</li>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    s'il y a un commentaire pour 2 lignes : extraire une méthode, renommer la méthode, et supprimer le
+                    commentaire
+                </aside>
+            </section>
+            <section>
+                <h4>Transformation Priority Premise</h4>
+                <ul>
+                    <li>({} → nil) no code at all → code that employs nil</li>
+                    <li>(nil → constant)</li>
+                    <li>(constant → constant+) a simple constant to a more complex constant</li>
+                    <li>(constant → scalar) replacing a constant with a variable or an argument</li>
+                    <li>(statement → statements) adding more unconditional statements.</li>
+                    <li>(unconditional → if) splitting the execution path</li>
+                    <li>(scalar → array)</li>
+                    <li>(array → container)</li>
+                </ul>
+            </section>
+            <section>
+                <h4>Transformation Priority Premise</h4>
+                <ul>
+                    <li>(statement → tail-recursion)</li>
+                    <li>(if → while)</li>
+                    <li>(statement → non-tail-recursion)</li>
+                    <li>(expression → function) replacing an expression with a function or algorithm</li>
+                    <li>(variable → assignment) replacing the value of a variable.</li>
+                    <li>(case) adding a case (or else) to an existing switch or if</li>
+                </ul>
+            </section>
+            <section>
+                <h4>Transformation Priority Premise</h4>
+                <img src="images/tpp-example.png" alt="Game of Life example" height="500">
+            </section>
+
+            <section>
+                <h4>Loi de Demeter</h4>
+                <p>Pas bien !</p>
+                <pre><code data-trim>
+    a.getB().getC().doThings();
+                    </code></pre>
+
+                <div class="fragment"><p>Bien !</p>
+                    <pre><code data-trim>
+    a.doThings();
+                    </code></pre>
+                </div>
+            </section>
+
+            <section>
+                <h4>Injection de dépendances</h4>
+                <p>Pas bien !</p>
+                <pre><code data-trim>
+    public class Client {
+      private Service service;
+
+      public Client() {
+        this.service = new ServiceLieAUneDatabasePrecise();
+      }
+
+      public String greet() {
+        return "Hello " + service.getName();
+      }
+    }
+
+                    </code></pre>
+
+                <div class="fragment">
+                    <p>Bien !</p>
+                    <pre><code data-trim>
+    public class Client {
+      private Service service;
+
+      public Client(Service service) {
+        this.service = service;
+      }
+        ...
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <section>
+                <p>Des frameworks permettent de faire "facilement" de l'injection de dépendances.</p>
+                <p>A voir si la complexité et les contraintes qu'ils apportent sont compensés.</p>
+
+                <aside class="notes">
+                    Plein de framework font le lien entre les différents objets et les constructeurs.
+                    En Java : Spring, Guice.
+                    On se retrouve avec 40 services injectés par object, c'est très très lourd.
+                </aside>
+            </section>
+
+            <section>
+                <p>Ne jamais coupler avec des librairies externes !</p>
+                <p>Jamais</p>
+                <p>Toujours utiliser des abstractions et des façades</p>
+            </section>
+
+            <section>
+                <h2>Smells</h2>
+                <div>
+                    <ul>
+                        <li><span class="red">S</span>ingleton</li>
+                        <li><span class="red">T</span>ight coupling</li>
+                        <li><span class="red">U</span>ntestable</li>
+                        <li><span class="red">P</span>remature Optimisation</li>
+                        <li><span class="red">I</span>ndescriptive naming</li>
+                        <li><span class="red">D</span>uplication</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Mieux</h2>
+                <ul>
+                    <li>SOLID principles</li>
+                    <li>null -> objet "vide"</li>
+                    <!--li class="fragment">do not check exceptions</li-->
+                    <li>héritage -> compositions</li>
+                    <li>if/switch -> polymorphisme</li>
+                    <li>pas de singletons</li>
+                </ul>
+
+                <aside class="notes">
+                    null -> objet métier représentant le vide !
+                </aside>
+            </section>
+
+            <section>
+                <h2>Solid</h2>
+                <ul>
+                    <li class="fragment">S - Single-responsiblity principle</li>
+                    <li class="fragment">O - Open-closed principle</li>
+                    <li class="fragment">L - Liskov substitution principle</li>
+                    <li class="fragment">I - Interface segregation principle</li>
+                    <li class="fragment">D - Dependency Inversion Principle</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>S - Single-responsiblity principle</h2>
+                <blockquote>
+                    A class should have one and only one reason to change, meaning that a class should have only one
+                    job.
+                </blockquote>
+                <p class="fragment">
+                    Evitez les Managers<br>
+                    Un manager fait un peu de tout mais mal, beaucoup de rien et embrouille tout le monde.
+                </p>
+            </section>
+
+            <section>
+                <h2>O - Open-closed principle</h2>
+                <blockquote>
+                    Objects or entities should be open for extension, but closed for modification.
+                </blockquote>
+
+                <p class="fragment">
+                    Penser héritage
+                </p>
+                <aside class="notes">
+                    s'il y a une modification à faire -> héritage, polymorphisme.<br>
+                    pas de if dans la classe<br>
+                    Shape -> area <br>
+                    2 implems pour cercle et rectangle, plutôt qu'un if<br>
+                    cf enregistrement activities splittés en 3.
+                </aside>
+            </section>
+            <section>
+                <h2>L - Liskov substitution principle</h2>
+                <blockquote>
+                    Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for
+                    objects y of type S where S is a subtype of T.
+                </blockquote>
+                <blockquote class="fragment">
+                    objects in a program should be replaceable with instances of their subtypes without altering the
+                    correctness of that program.
+                </blockquote>
+                <aside class="notes">
+                    de Barbara Liskov et Jeannette Wing<br>
+                    Toutes les méthodes de la classe mère sont utilisables (surchargée ou non) par la classe fille.
+                </aside>
+            </section>
+            <section>
+                <h2>I - Interface segregation principle</h2>
+                <blockquote>
+                    A client should never be forced to implement an interface that it doesn't use or clients shouldn't
+                    be forced to depend on methods they do not use.
+                </blockquote>
+
+
+                <aside class="notes">
+                    un objet peut implémenter plusieurs interfaces.<br>
+                    carré => losange + rectangle
+                </aside>
+            </section>
+            <section>
+                <h2>D - Dependency Inversion Principle</h2>
+                <blockquote>
+                    one should "depend upon abstractions, [not] concretions."
+                </blockquote>
+                <blockquote>
+                    A. High level modules should not depend upon low level modules. Both should depend upon
+                    abstractions.<br>
+                    B. Abstractions should not depend upon details. Details should depend upon abstractions.
+                </blockquote>
+                <aside class="notes">
+                    un service ne doit pas connaitre le type de stocage d'une bdd<br>
+                    la bdd doit savoir comment on l'utilise
+                </aside>
+            </section>
+        </section>
+
         <section>
             <h2>
                 Game of Life
             </h2>
             <section>
-                <img src="images/Game_of_life_torus_100_100_1500.gif" alt="Game of Life example" height="500">
+                <img src="images/kata/Game_of_life_torus_100_100_1500.gif" alt="Game of Life example" height="500">
+            </section>
+
+            <section>
+                <img src="images/kata/Oscillator.gif" alt="Game of Life example" height="500">
+            </section>
+
+            <section>
+                <img src="images/kata/Trefoil_knot_conways_game_of_life.gif" alt="Game of Life example" height="500">
             </section>
             <section>
                 <ul>
@@ -133,19 +677,19 @@
             </section>
             <section>
                 <b>Develop an api that moves a rover around on a grid.</b>
-               <div  class="fragment">
-                <ul>
-                    <li> You are given the initial starting point (x,y) of a rover and the direction (N,S,E,W) it is
-                        facing.
-                    </li>
-                    <li> The rover receives a character array of commands.</li>
-                    <li> Implement commands that move the rover forward/backward (f,b).</li>
-                    <li> Implement commands that turn the rover left/right (l,r).</li>
-                </ul>
-               </div>
+                <div class="fragment">
+                    <ul>
+                        <li> You are given the initial starting point (x,y) of a rover and the direction (N,S,E,W) it is
+                            facing.
+                        </li>
+                        <li> The rover receives a character array of commands.</li>
+                        <li> Implement commands that move the rover forward/backward (f,b).</li>
+                        <li> Implement commands that turn the rover left/right (l,r).</li>
+                    </ul>
+                </div>
                 <i class="fragment">
                     <p>Bonus:</p>
-                    <ul >
+                    <ul>
                         <li> Implement wrapping from one edge of the grid to
                             another. (planets are spheres after
                             all)
@@ -160,6 +704,43 @@
                 </i>
             </section>
         </section>
+
+        <section>
+            <h2>
+                Theatre
+            </h2>
+            <section>
+                <p>You work for a theater, and you're working on a suggestion system for seat allocations. During the
+                    process of buying tickets, the customer is offered the best seats available in a given price range.
+                    They will be shown a diagram of the theater with all the available seats shown, and the suggested
+                    seats highlighted. The customer will be able to change to different seats if they wish.   You do not
+                    need to write the code to display the theater layout with the suggested seats highlighted. You just
+                    have to write the code that decides which seats to suggest.</p>
+
+                <a href="https://twitter.com/emilybache">D'après Emily Bache</a>
+            </section>
+            <section>
+                <h3>Offer seats following these rules,</h3>
+                <h4>in this order</h4>
+                <ul>
+                    <li>do not offer any seat that is already booked by another customer</li>
+                    <li>offer adjacent seats to members of the same party</li>
+                    <li>offer seats nearer the middle of a row</li>
+                    <li>offer seats nearer the stage</li>
+                </ul>
+            </section>
+            <section>
+                < ------stage------- > <br>
+                A1 A2 A3 A4 A5 A6 A7<br>
+                B1 B2 B3 B4 B5 B6 B7 B8<br>
+                C1 C2 C3 C4 C5 C6 C7 C8 C9<br>
+                D1 D2 D3 D4 D5 D6 D7 D8 D9<br>
+                E1 E2 E3 E4 E5 E6 E7 E8 E9 E10<br>
+                F1 F2 F3 F4 F5 F6 F7 F8 F9 F10<br>
+                G1 G2 G3 G4 G5 G6 G7 G8 G9 G10<br>
+
+            </section>
+        </section>
     </div>
 </div>
 
@@ -168,39 +749,21 @@
 <script src="js/reveal.js"></script>
 
 <script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
 
 </script>
 </body>

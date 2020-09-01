@@ -181,16 +181,6 @@
                         our job is to give name to things
                     </aside>
                 </section>
-
-                <!-- section> TODO
-                    <h2>Artisanal Retro-futirism Crossed with Anarcho-syndicalism</h2>
-                    <p>Is Craftsmanship inclusive? and Crafting? and Craft?</p>
-                    <p>Craftsman, craftswoman, craftsperson, crafter</p>
-                    <br>
-                    <aside class="notes">
-                        our job is to give name to things
-                    </aside>
-                </section -->
             </section>
 
 
@@ -212,13 +202,12 @@
                     <span class="fragment" data-fragment-index="12">Iteration,</span>
                     <span class="fragment" data-fragment-index="13">Baby-steps,</span>
                     <span class="fragment" data-fragment-index="14">Refactoring,</span>
-                    <span class="fragment" data-fragment-index="14">Mentoring,</span>
-                    <span class="fragment" data-fragment-index="15">Collective ownership,</span>
-                    <span class="fragment" data-fragment-index="16">Self-organization,</span>
-                    <span class="fragment" data-fragment-index="17">Continuous Integration,</span>
-                    <span class="fragment" data-fragment-index="18">Continuous Delivery</span>
+                    <span class="fragment" data-fragment-index="15">Mentoring,</span>
+                    <span class="fragment" data-fragment-index="16">Collective ownership,</span>
+                    <span class="fragment" data-fragment-index="17">Self-organization,</span>
+                    <span class="fragment" data-fragment-index="18">Continuous Integration,</span>
+                    <span class="fragment" data-fragment-index="19">Continuous Delivery</span>
                     <p class="fragment">...</p>
-                    <p class="fragment"></p>
 
                     <aside class="notes">
                         same as xp practices <br>
@@ -562,7 +551,7 @@
                     <p class="fragment">un seul assert ?</p>
                 </section>
                 <section>
-                    <p>XUnit (Juni, NUnit, CppUnit ...)</p>
+                    <p>XUnit (Junit, NUnit, CppUnit ...)</p>
                     <p>d'autres frameworks</p>
                     <p>vous pouvez facilement créer le votre</p>
 
@@ -1073,6 +1062,35 @@
                         commentaire
                     </aside>
                 </section>
+                <section>
+                    <h4>Transformation Priority Premise</h4>
+                    <ul>
+                        <li>({} → nil) no code at all → code that employs nil</li>
+                        <li>(nil → constant)</li>
+                        <li>(constant → constant+) a simple constant to a more complex constant</li>
+                        <li>(constant → scalar) replacing a constant with a variable or an argument</li>
+                        <li>(statement → statements) adding more unconditional statements.</li>
+                        <li>(unconditional → if) splitting the execution path</li>
+                        <li>(scalar → array)</li>
+                        <li>(array → container)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Transformation Priority Premise</h4>
+                    <ul>
+                        <li>(statement → tail-recursion)</li>
+                        <li>(if → while)</li>
+                        <li>(statement → non-tail-recursion)</li>
+                        <li>(expression → function) replacing an expression with a function or algorithm</li>
+                        <li>(variable → assignment) replacing the value of a variable.</li>
+                        <li>(case) adding a case (or else) to an existing switch or if</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Transformation Priority Premise</h4>
+                    <img src="images/tpp-example.png" alt="Game of Life example" height="500">
+                </section>
+
                 <section>
                     <h4>Loi de Demeter</h4>
                     <p>Pas bien !</p>
