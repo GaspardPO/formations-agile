@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Code-Retreat et Software Crafting</title>
+    <title>Legacy Code</title>
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="Gaspard POINTEAU">
 
@@ -30,7 +30,7 @@
 
 
         <section>
-            <h2>Une batterie de tests pour du code Legacy en quelques minutes avec Approval Test</h2>
+            <h2>Legacy Code</h2>
             <p>
                 <small>Gaspard POINTEAU<br><a href="http://twitter.com/Gaspard_PO">@Gaspard_PO</a></small>
             </p>
@@ -40,7 +40,6 @@
         <section>
             <section>
                 <h2>Legacy-Code</h2>
-                <h3>Définition </h3>
                 <ul>
                     <li class="fragment">existant ?</li>
                     <li class="fragment">de mauvaise qualité ?</li>
@@ -55,68 +54,142 @@
                 <h3 class="fragment">Du code sans tests</h3>
             </section>
             <section>
-
                 <h3>La seule vérité est le code</h3>
 
                 <p class="fragment">Les specs ne sont pas à jour et pas fiables</p>
-
                 <br>
                 <h4 class="fragment">Ne rien changer au fonctionnement</h4>
                 <p class="fragment">Un bug suffisamment vieux devient une feature</p>
                 <p class="fragment">Toujours demander au PO</p>
             </section>
+            <section>
+                <h3>Pourquoi refactorer ?</h3>
 
+                <p class="fragment">Le code fonctionne très bien, ne pas refactorer pour le principe.<br>
+                    C'est couteux et risqué.</p>
 
+                <p class="fragment">Pour comprendre le fonctionnement ?</p>
+                <p class="fragment">Pour ajouter une feature ?</p>
+                <p class="fragment">Pour rembourser la dette ?</p>
+                <blockquote class="fragment">"Make the change easy before making the easy change."<br>
+                    Kent Beck
+                </blockquote>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h3>Gestion de version</h3>
+                <p class="fragment">Pouvoir toujours revenir à un état stable.</p>
+                <p class="fragment">S'autoriser à refactorer, renommer, bouger des choses pour rien, juste pour
+                    découvrir le code.</p>
+            </section>
+            <section>
+                <h3>Time-boxer</h3>
+            </section>
+            <section>
+                <h3>Bloc-notes</h3>
+            </section>
+        </section>
+        <section>
             <section>
                 <h3>Golden Master Test</h3>
-
                 <p>Le système est une boite noire, on vérifie que pour les mêmes entrées on a toujours les mêmes
                     sorties</p>
+                <img src="images/legacy/black-box.jpg" alt="inputs goes to black-box, ouput goes" height="300">
+            </section>
+            <section>
                 <uL>
+                    <li class="fragment">Librairie Approvals</li>
+                    <li class="fragment">Fixer les entrées</li>
+                    <li class="fragment">Sérialiser les objets, ou rediriger les sorties pour avoir du texte</li>
                     <li class="fragment">Vérifier avec la couverture de code. Attention, pas toujours fiable</li>
                     <li class="fragment">Vérifier en changeant des bouts de code. (Red du TDD)</li>
-                    <li class="fragment">Sérialiser les objets, ou rediriger les sorties.</li>
-                    <li class="fragment">Librairie Approvals</li>
                     <li class="fragment">Utiliser des données représentatives (copie de prod)</li>
                     <li class="fragment">Vérifier qu'on ne touche pas d'environnement de prod.</li>
                 </uL>
             </section>
+        </section>
+        <section>
             <section>
-                <h3>Approvals</h3>
-
+                <h3>Test de caractérisations</h3>
+                <p>Créer une batterie de tests unitaires qui permmettent d'avoir des specs.</p>
+            </section>
+            <section>
+                <h3>Rendre le code testable en supprimant les dépendances</h3>
                 <ul>
-                    <li>.Net</li>
-                    <li>C++</li>
-                    <li>Java</li>
-                    <li>Lua</li>
-                    <li>NodeJS</li>
-                    <li>Objective-C</li>
-                    <li>Perl</li>
-                    <li>Python</li>
-                    <li>Go</li>
-                    <li>Js</li>
+                    <li class="fragment">Extraire les appels statiques dans des méthodes protected</li>
+                    <li class="fragment">Utiliser uniquement les refactos automatisé de l'IDE</li>
+                    <li class="fragment">remplacer les "new Object()" par des paramètres</li>
+                    <li class="fragment">Utiliser l'héritage</li>
+                </ul>
+                <aside class="notes">
+                    rendre le code testable -> héritage, avant d'arriver à de l'injection
+                </aside>
+            </section>
+            <section>
+                <p>Commencer par tester la branche la plus courte</p>
+                <p class="fragment">La branche avec le moins de complexité (for, if...) et la plus facile à tester.</p>
+                <p class="fragment">Utiliser la couverture de code pour voir les branches qui ne sont pas encore
+                    testées.</p>
+            </section>
+            <section>
+                <h4 class="fragment">En dernier recours</h4>
+
+                <p class="fragment">Reflection</p>
+                <p class="fragment">Mock d'objet statiques</p>
+
+                <aside class="notes">
+                    très risqué !
+                </aside>
+            </section>
+       </section>
+
+        <section>
+            <section>
+                <h3>Refactorer</h3>
+            </section>
+            <section>
+                <p>Baby-steps</p>
+                <p>Tester en continu</p>
+            </section>
+            <section>
+                <h4>Nommer les choses</h4>
+                <ul>
+                    <li class="fragment">Commenter pour donner un nom a un paquet de lignes, à un chiffre</li>
+                    <li class="fragment">Extraire ces lignes dans une méthode, une variable</li>
+                    <li class="fragment">Donner comme nom à la méthode/variable le commentaire</li>
+                    <li class="fragment">Supprimer le commentaire</li>
+                </ul>
+                <blockquote class="fragment" du por>Comprendre ce que fait le code et mettre cette compréhension dans le
+                    code.
+                </blockquote>
+            </section>
+            <section>
+                <h4>Extraire des méthodes</h4>
+                <p>Commencer par les branches les plus à droite (les plus imbriquées) et par des tous petits blocs.</p>
+                <p>Extraire des variables, forcer la visibilité du vide pour faire apparaitre de la duplication.</p>
+            </section>
+            <section>
+                <h4>Améliorer le design</h4>
+                <ul>
+                    <li class="fragment">Casser les appels à l'extérieur (Logs, BDD, fichiers, mails ...)</li>
+                    <li class="fragment">Casser les appels statiques</li>
+                    <li class="fragment">Mettre de l'injection de dépendances</li>
+                    <li class="fragment">Extraire des objets</li>
                 </ul>
             </section>
             <section>
-                <h3>Approvals</h3>
-
-                <a href="http://approvaltests.com">Approval</a>
-                <a href="https://github.com/approvals">https://github.com/approvals</a>
+                <h4>Objets</h4>
+                <ul>
+                    <li class="fragment">Profiter de la création d'objets pour faire du TDD et mettre des tests unitaires.</li>
+                    <li class="fragment">Procéder par toutes petites itérations : encapsuler un String dans un Objet, puis rajouter d'autres champs, des méthodes ...</li>
+                    <li class="fragment">Bien se demander quel objet est responsable de quoi.</li>
+                    <li class="fragment">append(s)  -> s.append()</li>
+                </ul>
             </section>
-            <section>
-                <h3>Gilded-Rose</h3>
-
-                <h4>Emily Bache</h4>
-
-                <a href="https://github.com/emilyBache">https://github.com/emilyBache</a>
-                <img src="images/EmilyBache.jpeg" alt="Emily Bache" height="380">
-
-            </section>
-
-
         </section>
-
     </div>
+
 </div>
 
 

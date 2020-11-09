@@ -1,0 +1,485 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Clean-Code</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Gaspard POINTEAU">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <section>
+                <h2>Clean-Code</h2>
+            </section>
+            <section>
+                <img src="images/cleancode.jpg" alt="cleancode">
+                <p>Robert C. Martin aka Uncle Bob</p>
+            </section>
+            <section>
+                <h3>Clean-Code</h3>
+                <blockquote>
+                    "Any fool can write code that a computer can understand.
+                    Good programmers write code that humans can understand."<br>
+                    Martin Fowler
+                </blockquote>
+                <blockquote>
+                    "Mal nommer les choses, c'est ajouter au malheur du monde !"<br>
+                    Albert Camus
+                </blockquote>
+                <blockquote>
+                    "There are only two hard things in Computer Science:<br>
+                    - cache invalidation,<br>
+                    - naming things"
+                    Phil Karlton<br>
+                </blockquote>
+            </section>
+            <section>
+                <p>Vous allez passer beaucoup plus de temps à relire du code qu'à en écrire.</p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h3>Namming</h3>
+            </section>
+            <section>
+                <h4>Utilisez du vocabulaire métier</h4>
+
+                <pre><code data-trim="java">
+    public List&lt;int[]&gt; getFlg() {
+      List&lt;int[]&gt; list1 = new ArrayList&lt;int[]&gt;();
+      for (int[] x : theList ) {
+        if (x[0] == 4)
+          list1.add(x);
+      }
+
+      return list1;
+    }
+                        </code></pre>
+
+
+                <pre class="fragment"><code data-trim class="java">
+    public List&lt;Cell&gt; getFlaggedCells() {
+      List&lt;Cell&gt; flaggedCells = new ArrayList&lt;Cell&gt;();
+      for (Cell cell : gameBoard ) {
+        if (cell.isFlagged())
+          flaggedCells.add(cell);
+      }
+
+      return flaggedCells;
+    }
+                        </code></pre>
+
+                <aside class="notes">
+                    Parlez au business !
+                    en théorie, un PO ou un utilisateur devrait pouvoir lire votre code.<br>
+                    Ou au moins les tests et titres de fonctions.<br>
+                    Bonus : en parlant au business, vous comprendrez vraiment le problème métier.<br>
+                    BABEL
+                </aside>
+            </section>
+            <section>
+                <p> Parlez au business !
+                    en théorie, un PO ou un utilisateur devrait pouvoir lire votre code.<br>
+                    Ou au moins les tests et titres de fonctions.<br></p>
+                <p class="fragment">Bonus : en parlant au business, vous comprendrez vraiment le problème métier.</p>
+            </section>
+            <section>
+                <p>Evitez les <i>x, i, j, temp</i></p>
+                <p>Evitez les <i>List, array</i>, les prefixes de types (<i>u8_price</i>)</p>
+                <p>Evitez le vocabulaire technique, préferez le vocabulaire métier.</p>
+            </section>
+            <section>
+                <p>Class : Nom</p>
+                <p>Methode : verbe d'action</p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h3>Fonction / Méthode</h3>
+            </section>
+            <section>
+                <h4>Small</h4>
+                <p class="fragment">1 seul niveau d'abstraction</p>
+                <p class="fragment">taille de la main ?</p>
+                <p class="fragment">pas plus d'un if / for ?</p>
+            </section>
+            <section>
+                <h4>Séparez les niveaux d'abstraction</h4>
+
+                <pre><code data-trim="java">
+    public RGBColor readCurrentColor(BlinkLed led) {
+        device.sendCommand(new ReadColorRequest(led));
+
+        byte[] response = device.readResponse();
+
+        int red = response[2] >= 0 ? response[2] : response[2] + 256;
+        int green = response[3] >= 0 ? response[3] : response[3] + 256;
+        int blue = response[4] >= 0 ? response[4] : response[4] + 256;
+        return new RGBColor(red, green, blue);
+    }
+                        </code></pre>
+                <pre class="fragment"><code data-trim class="java">
+    public RGBColor readCurrentColor(BlinkLed led) {
+        device.sendCommand(new ReadColorRequest(led));
+        byte[] response = device.readResponse();
+        return extractColor(response);
+    }
+    private RGBColor extractColor(byte[] response) {
+        int red = convertToPositiveInt(response[2]);
+        int green = convertToPositiveInt(response[3]);
+        int blue = convertToPositiveInt(response[4]);
+        return new RGBColor(red, green, blue);
+    }
+    private int convertToPositiveInt(byte byt) {
+        return byt >= 0 ? byt : byt + 256;
+    }
+    </code></pre>
+
+                <aside class="notes">
+
+                </aside>
+            </section>
+
+            <section>
+                <h4>Séparez les niveaux d'abstraction</h4>
+                <p class="fragment">Extract Method</p>
+            </section>
+            <section>
+                <ul>
+                    <li>Soit une commande : <i>doSomething()</i></li>
+                    <li>Soit une requete : <i>getThing()</i></li>
+                </ul>
+                <p>mais pas les deux !</p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>Commentaires</h4>
+            </section>
+            <section>
+                <img src="images/cleancode/comment.jpg" alt="Comments">
+            </section>
+            <section>
+                <img src="images/cleancode/comment2.jpg" alt="Comments">
+            </section>
+            <section>
+                <img src="images/cleancode/comment3.png" alt="Comments">
+            </section>
+
+            <section>
+                <h4>Inutiles ou Faux</h4>
+                <pre><code data-trim class="java">
+    /*
+    * A comment to please checkstyle
+    */</code></pre>
+                <pre><code data-trim>
+    /*
+    * Set the port
+    *
+    * @params port
+    */
+    public void setPort(Port port) {this.port=port}
+    </code></pre>
+                <pre><code data-trim>
+    ...
+            } /* end for */
+            dao.flush();
+          default :
+            break;
+          } /* end switch */
+        } /* end if */
+      } /* end if */
+    } catch ...
+    </code></pre>
+                <aside class="notes">
+                    évidemment, il y a en d'autres, des pas à jours, des faux, des inutiles.<br>
+                    et le code commenté (mort), c'est pas comme si on avait des systèmes de gestion de version pour ça.
+
+                </aside>
+            </section>
+            <section>
+                <ul>
+                    <li>Soit obsolètes et faux</li>
+                    <li>Soit redondant et inutiles</li>
+                </ul>
+                <br>
+                <div class="fragment"><p>Exceptions:</p>
+                    <ul>
+                        <li>Public API</li>
+                        <li>Interface</li>
+                    </ul>
+                </div>
+
+                <br>
+                <div class="fragment">
+                    <ul>
+                        <li>Les Test expliquent le Quoi</li>
+                        <li>Le Code explique le comment</li>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    s'il y a un commentaire pour 2 lignes : extraire une méthode, renommer la méthode, et supprimer le
+                    commentaire
+                </aside>
+            </section>
+            <section>
+                <blockquote>Don’t use a comment when you can use a function or a variable</blockquote>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h3>Objets</h3>
+            </section>
+            <section>
+                <h4>Abstraction</h4>
+                <p>Expose comment on l'utilise, le métier<br>
+                    pas l'implémentation spécifique </p>
+                <p class="fragment">Penser au TDD</p>
+            </section>
+            <section>
+                <h4>Loi de Demeter</h4>
+                <p>Pas bien !</p>
+                <pre><code data-trim>
+    a.getB().getC().doThings();
+                    </code></pre>
+
+                <div class="fragment"><p>Bien !</p>
+                    <pre><code data-trim>
+    a.doThings();
+                    </code></pre>
+                </div>
+                <p class="fragment">Un module n'a pas à connaitre l'implémentation des objets qu'il manipule.</p>
+            </section>
+            <section>
+                <h2>Solid</h2>
+                <ul>
+                    <li class="fragment">S - Single-responsiblity principle</li>
+                    <li class="fragment">O - Open-closed principle</li>
+                    <li class="fragment">L - Liskov substitution principle</li>
+                    <li class="fragment">I - Interface segregation principle</li>
+                    <li class="fragment">D - Dependency Inversion Principle</li>
+                </ul>
+            </section>
+            <section>
+                <h2>S - Single-responsiblity principle</h2>
+                <blockquote>
+                    A class should have one and only one reason to change, meaning that a class should have only one
+                    job.
+                </blockquote>
+                <p class="fragment">
+                    Evitez les Managers<br>
+                    Un manager fait un peu de tout mais mal, beaucoup de rien et embrouille tout le monde.
+                </p>
+            </section>
+            <section>
+                <h2>O - Open-closed principle</h2>
+                <blockquote>
+                    Objects or entities should be open for extension, but closed for modification.
+                </blockquote>
+
+                <p class="fragment">
+                    Penser héritage
+                </p>
+                <aside class="notes">
+                    s'il y a une modification à faire -> héritage, polymorphisme.<br>
+                    pas de if dans la classe<br>
+                    Shape -> area <br>
+                    2 implems pour cercle et rectangle, plutôt qu'un if<br>
+                    cf enregistrement activities splittés en 3.
+                </aside>
+            </section>
+            <section>
+                <h4>Switch, if -> Polymorphisme</h4>
+                <pre><code data-trim>
+public Money calculatePay(Employee e) {
+    switch (e.type) {
+        case COMMISSIONED:
+            return calculateCommissionedPay(e);
+            case HOURLY:
+                return calculateHourlyPay(e);
+            case SALARIED:
+                return calculateSalariedPay(e);
+            default:
+                throw new InvalidEmployeeType(e.type);
+        }
+    }
+                </code></pre>
+            </section>
+            <section>
+                <h2>L - Liskov substitution principle</h2>
+                <blockquote>
+                    Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for
+                    objects y of type S where S is a subtype of T.
+                </blockquote>
+                <blockquote class="fragment">
+                    objects in a program should be replaceable with instances of their subtypes without altering the
+                    correctness of that program.
+                </blockquote>
+                <aside class="notes">
+                    de Barbara Liskov et Jeannette Wing<br>
+                    Toutes les méthodes de la classe mère sont utilisables (surchargée ou non) par la classe fille.
+                </aside>
+            </section>
+            <section>
+                <h2>I - Interface segregation principle</h2>
+                <blockquote>
+                    A client should never be forced to implement an interface that it doesn't use or clients shouldn't
+                    be forced to depend on methods they do not use.
+                </blockquote>
+                <aside class="notes">
+                    un objet peut implémenter plusieurs interfaces.<br>
+                    carré => losange + rectangle
+                </aside>
+            </section>
+            <section>
+                <h2>D - Dependency Inversion Principle</h2>
+                <blockquote>
+                    one should "depend upon abstractions, [not] concretions."
+                </blockquote>
+                <blockquote>
+                    A. High level modules should not depend upon low level modules. Both should depend upon
+                    abstractions.<br>
+                    B. Abstractions should not depend upon details. Details should depend upon abstractions.
+                </blockquote>
+                <aside class="notes">
+                    un service ne doit pas connaitre le type de stocage d'une bdd<br>
+                    la bdd doit savoir comment on l'utilise
+                </aside>
+            </section>
+            <section>
+                <h4>Injection de dépendances</h4>
+                <p>Pas bien !</p>
+                <pre><code data-trim>
+    public class Client {
+      private Service service;
+
+      public Client() {
+        this.service = new ServiceLieAUneDatabasePrecise();
+      }
+
+      public String greet() {
+        return "Hello " + service.getName();
+      }
+    }
+                    </code></pre>
+
+                <div class="fragment">
+                    <p>Bien !</p>
+                    <pre><code data-trim>
+    public class Client {
+      private Service service;
+
+      public Client(Service service) {
+        this.service = service;
+      }
+        ...
+    }
+                    </code></pre>
+                </div>
+            </section>
+            <section>
+                <p>Des frameworks permettent de faire "facilement" de l'injection de dépendances.</p>
+                <p>A voir si la complexité et les contraintes qu'ils apportent sont compensés.</p>
+
+                <aside class="notes">
+                    Plein de framework font le lien entre les différents objets et les constructeurs.
+                    En Java : Spring, Guice.
+                    On se retrouve avec 40 services injectés par object, c'est très très lourd.
+                </aside>
+            </section>
+            <section>
+                <p>Ne jamais coupler avec des librairies externes !</p>
+                <p>Jamais</p>
+                <p>Toujours utiliser des abstractions et des façades</p>
+            </section>
+
+            <section>
+                <h2>Smells</h2>
+                <div>
+                    <ul>
+                        <li><b>S</b> ingleton</li>
+                        <li><b>T</b> ight coupling</li>
+                        <li><b>U</b> ntestable</li>
+                        <li><b>P</b> remature Optimisation</li>
+                        <li><b>I</b> ndescriptive naming</li>
+                        <li><b>D</b>  uplication</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Mieux</h2>
+                <ul>
+                    <li>SOLID principles</li>
+                    <li>null -> objet "vide"</li>
+                    <!--li class="fragment">do not check exceptions</li-->
+                    <li>héritage -> compositions</li>
+                    <li>if/switch -> polymorphisme</li>
+                    <li>pas de singletons</li>
+                </ul>
+
+                <aside class="notes">
+                    null -> objet métier représentant le vide !
+                </aside>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h3>Null</h3>
+            </section>
+            <section>
+                <p>Ne retournez jamais null.</p>
+                <p class="fragment">Soit le vide est une valeur possible et c'est un objet spécifique<br>
+                    ("", un UserEmpty, emptylist ...)</p>
+                <p class="fragment">Soit c'est une erreur et exception</p>
+            </section>
+        </section>
+    </div>
+</div>
+
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+</script>
+</body>
+</html>
