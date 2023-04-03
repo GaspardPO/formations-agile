@@ -20,3 +20,5 @@ https://gaspardpo.github.io/formations-agile/clean-code
 https://gaspardpo.github.io/formations-agile/ateliers  
 https://gaspardpo.github.io/formations-agile/Katas  
 
+https://gaspardpo.github.io/formations-agile/DesignPatterns    
+

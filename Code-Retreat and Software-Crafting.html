@@ -581,48 +581,48 @@
                     <img src="images/unit_test_kotlin.png" alt="unit test kotlin" height="100">
                     <img src="images/unit_test_ruby.png" alt="unit test ruby" height="300">
                 </section>
-                <section>
-                    <h3>assert par défaut</h3>
+                    <section>
+                        <h3>assert par défaut</h3>
 
-                    <pre><code data-trim="java">
-    assertTrue(bool); assertFalse(bool);
-    fail();
-    assertEquals(actual, expected) ;
-    assertEquals(actualDouble, expectedDouble, delta) ;
-    assertNotEquals(actual, expected)
-    assertArrayEquals(actual[], expected[]);
-    assertSame, assertNotSame, assertNull, assertNotNull
-    ...
-    </code></pre>
-                </section>
-                <section>
-                    <h3>Fluent assertion</h3>
-                    <pre><code data-trim="java">
-    assertThat(actual).isEqualTo(expected);
+                        <pre><code data-trim="java">
+        assertTrue(bool); assertFalse(bool);
+        fail();
+        assertEquals(actual, expected) ;
+        assertEquals(actualDouble, expectedDouble, delta) ;
+        assertNotEquals(actual, expected)
+        assertArrayEquals(actual[], expected[]);
+        assertSame, assertNotSame, assertNull, assertNotNull
+        ...
+        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Fluent assertion</h3>
+                        <pre><code data-trim="java">
+        assertThat(actual).isEqualTo(expected);
 
-    assertThat(list).isNotEmpty().hasSize(5)
-        .isSorted()
-        .containsExactlyInAnyOrder(value1, value2)
-        .allMatch(insideValue -> insideValue.getSomeField().equal(something))
+        assertThat(list).isNotEmpty().hasSize(5)
+            .isSorted()
+            .containsExactlyInAnyOrder(value1, value2)
+            .allMatch(insideValue -> insideValue.getSomeField().equal(something))
 
-    assertThat(contentOf(xFile)).startsWith("The Truth")
-        .contains("Is Out").endsWith("There");
-    assertThat(directory).isDirectory().hasSameContentAs(otherDirectory);
+        assertThat(contentOf(xFile)).startsWith("The Truth")
+            .contains("Is Out").endsWith("There");
+        assertThat(directory).isDirectory().hasSameContentAs(otherDirectory);
 
-    assertThatExceptionOfType(SomeException::class.java).isThrownBy({ methodToTest() })
-        .withMessageContaining("boom")
-        .withCauseInstanceOf(IOException::class.java)
+        assertThatExceptionOfType(SomeException::class.java).isThrownBy({ methodToTest() })
+            .withMessageContaining("boom")
+            .withCauseInstanceOf(IOException::class.java)
 
-    assertThat(jack).isEqualToComparingFieldByFieldRecursively(jackClone);
-    </code></pre>
+        assertThat(jack).isEqualToComparingFieldByFieldRecursively(jackClone);
+        </code></pre>
 
-                    <p>Java : assertJ, Harmcrest<br>
-                        Javascript : chai, jest<br>
-                        PHP : phpspec, atoum <br>
-                        Go : gomega, Ruby : rspec<br>
-                    </p>
+                        <p>Java : assertJ, Harmcrest<br>
+                            Javascript : chai, jest<br>
+                            PHP : phpspec, atoum <br>
+                            Go : gomega, Ruby : rspec<br>
+                        </p>
 
-                </section>
+                    </section>
                 <section>
                     <h3>Mocks</h3>
 
@@ -1460,7 +1460,7 @@
                     <br><br>
                     <div class="fragment">
                         <h4>Toujours respecter les autres</h4>
-                        <p>Que l'on soit l'auteur-e du code ou la personne qui relit.</p>
+                        <p>Que l'on soit l'auteur·ice du code ou la personne qui relit.</p>
                         <p>On critique le code, pas la personne</p>
                         <blockquote>
                             Hard with code, soft with human
